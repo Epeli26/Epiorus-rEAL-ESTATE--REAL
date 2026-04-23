@@ -1049,7 +1049,7 @@ function CookieBanner({ t, onOpenPrivacy }: { t: any, onOpenPrivacy: () => void 
   const [isVisible, setIsVisible] = useState(false);
 
   useEffect(() => {
-    const consent = localStorage.getItem('epirus_cookie_consent_v2');
+    const consent = localStorage.getItem('epirus_cookie_consent_v3');
     if (!consent) {
       setIsVisible(true);
     }
@@ -1079,7 +1079,7 @@ function CookieBanner({ t, onOpenPrivacy }: { t: any, onOpenPrivacy: () => void 
           </button>
           <button 
             onClick={() => {
-              localStorage.setItem('epirus_cookie_consent_v2', 'accepted');
+              localStorage.setItem('epirus_cookie_consent_v3', 'accepted');
               setIsVisible(false);
             }}
             className="flex-1 sm:flex-none px-6 py-2.5 text-sm bg-terracotta text-ivory rounded hover:bg-gold transition-colors uppercase tracking-widest text-center shadow-lg"
