@@ -813,10 +813,10 @@ function PropertyCard({ property, index, onViewDetails, t }: { property: any, in
 
   return (
     <motion.div 
-      initial={{ opacity: 0, y: 20 }}
+      initial={{ opacity: 0, y: 15 }}
       whileInView={{ opacity: 1, y: 0 }}
-      viewport={{ once: true }}
-      transition={{ duration: 0.6, delay: index * 0.1 }}
+      viewport={{ once: true, margin: "100px" }}
+      transition={{ duration: 0.35, delay: index * 0.05 }}
       className="bg-white rounded-xl overflow-hidden shadow-sm border border-stone/10 group flex flex-col scroll-snap-align-start"
     >
       <div className="relative overflow-hidden aspect-video">
