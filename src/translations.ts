@@ -39,6 +39,36 @@ export const translations = {
       quote: "\"The undiscovered jewel of the Mediterranean.\"",
       quoteAuthor: "— Hellenic Times"
     },
+    faq: {
+      subtitle: "Got Questions?",
+      title: "Frequently Asked Questions",
+      items: [
+        {
+          question: "Can foreigners buy property in Greece?",
+          answer: "Yes, EU citizens can buy property in Greece with no restrictions. Non-EU citizens can also purchase property, though there may be additional requirements in border regions. Our team will guide you through every step of the process."
+        },
+        {
+          question: "What is the Golden Visa program?",
+          answer: "Greece's Golden Visa program grants a 5-year residency permit to non-EU citizens who invest €250,000 or more in Greek real estate. This permit is renewable and extends to family members, offering visa-free travel within the Schengen Area."
+        },
+        {
+          question: "What costs should I expect when buying property?",
+          answer: "In addition to the property price, buyers typically pay transfer tax (3.09% of the assessed value), notary fees (approx. 1–1.5%), lawyer fees (1–2%), and real estate agent commission. We provide a full cost breakdown before you commit."
+        },
+        {
+          question: "How long does the buying process take?",
+          answer: "The process typically takes 1–3 months from offer acceptance to completion. It involves gathering documents, conducting due diligence, signing a preliminary agreement, and completing the final notarial deed. We handle coordination on your behalf."
+        },
+        {
+          question: "Do I need a Greek tax number (AFM) to buy property?",
+          answer: "Yes, every buyer must obtain a Greek Tax Registration Number (AFM) before completing a property purchase. We can assist you or your lawyer in obtaining this quickly through the local tax office."
+        },
+        {
+          question: "Can I rent out my property in Epirus?",
+          answer: "Absolutely. Short-term rentals (e.g., Airbnb) are permitted with proper registration on the Greek Tourism Registry. The Epirus region sees strong tourist demand, especially near Parga, Preveza, and the Acheron area, making holiday lets a great investment."
+        }
+      ]
+    },
     footer: {
       desc: "Curating the finest real estate portfolio in Northwestern Greece. We provide bespoke services for discerning buyers seeking luxury, heritage, and natural beauty.",
       contact: "Contact",
@@ -298,6 +328,12 @@ export const translations = {
           title: "Unique Beachfront Hotel / Property 450 sq.m in Ammoudia",
           location: "Ammoudia, Municipality of Parga",
           description: "Unique property suitable for a hotel or personal use. First line (beachfront) with unobstructed views. The building is 450 sq.m. on a 1,000 sq.m. plot. It features 10 double rooms, 5 lofts, a swimming pool, large balconies with stainless steel railings, parking, additional outdoor bathrooms, a fire safety system, etc. Offers unique views of the Ionian Sea and is ready for use. Located in Ammoudia, Municipality of Parga. Just 30 minutes from Aktion Airport and 30 minutes from the port of Igoumenitsa. Serious inquiries only please. Exclusively at Epirus Real Estate. Price €1,200,000."
+        },
+        {
+          id: 25,
+          title: "Unobstructed Plot 617 sq.m in Loutsa",
+          location: "Loutsa, Municipality of Parga",
+          description: "Unobstructed plot for sale with a view of the endless blue in Loutsa, Municipality of Parga. 617 sq.m with a building capacity of 240 sq.m for a house. Even and buildable, within the city plan, with a 16-meter frontage on a municipal road. Immediately available. Price €100,000."
         }
       ]
   },
@@ -341,6 +377,36 @@ export const translations = {
       explore: "Εξερευνήστε Περιοχές",
       quote: "\"Το ανεξερεύνητο κόσμημα της Μεσογείου.\"",
       quoteAuthor: "— Hellenic Times"
+    },
+    faq: {
+      subtitle: "Έχετε Απορίες;",
+      title: "Συχνές Ερωτήσεις",
+      items: [
+        {
+          question: "Μπορούν αλλοδαποί να αγοράσουν ακίνητο στην Ελλάδα;",
+          answer: "Ναι, οι πολίτες της ΕΕ μπορούν να αγοράσουν ακίνητο χωρίς περιορισμούς. Οι πολίτες εκτός ΕΕ μπορούν επίσης να αγοράσουν, αν και ενδέχεται να υπάρχουν επιπλέον απαιτήσεις σε παραμεθόριες περιοχές. Η ομάδα μας θα σας καθοδηγήσει σε κάθε βήμα."
+        },
+        {
+          question: "Τι είναι το πρόγραμμα Golden Visa;",
+          answer: "Το πρόγραμμα Golden Visa της Ελλάδας χορηγεί άδεια διαμονής 5 ετών σε πολίτες εκτός ΕΕ που επενδύουν 250.000€ ή περισσότερο σε ελληνικά ακίνητα. Η άδεια είναι ανανεώσιμη και εκτείνεται στα μέλη της οικογένειας, προσφέροντας ταξίδια εντός Σένγκεν."
+        },
+        {
+          question: "Ποιο κόστος πρέπει να αναμένω κατά την αγορά ακινήτου;",
+          answer: "Πέραν της τιμής αγοράς, οι αγοραστές συνήθως πληρώνουν φόρο μεταβίβασης (3,09% επί της αντικειμενικής αξίας), συμβολαιογραφικά (περίπου 1–1,5%), αμοιβή δικηγόρου (1–2%) και προμήθεια μεσίτη. Σας παρέχουμε πλήρη ανάλυση κόστους πριν δεσμευτείτε."
+        },
+        {
+          question: "Πόσο διαρκεί η διαδικασία αγοράς;",
+          answer: "Η διαδικασία διαρκεί συνήθως 1–3 μήνες από την αποδοχή της προσφοράς έως την ολοκλήρωση. Περιλαμβάνει συλλογή εγγράφων, νομικό έλεγχο, υπογραφή προσυμφώνου και τελικό συμβολαιογραφικό έγγραφο. Αναλαμβάνουμε τον συντονισμό εκ μέρους σας."
+        },
+        {
+          question: "Χρειάζομαι ελληνικό ΑΦΜ για να αγοράσω ακίνητο;",
+          answer: "Ναι, κάθε αγοραστής πρέπει να αποκτήσει ελληνικό ΑΦΜ πριν ολοκληρώσει την αγοράσε ακίνητο. Μπορούμε να σας βοηθήσουμε ή τον δικηγόρο σας στην απόκτησή του μέσω της τοπικής εφορίας."
+        },
+        {
+          question: "Μπορώ να εκμισθώσω το ακίνητό μου στην Ήπειρο;",
+          answer: "Απολύτως. Οι βραχυχρόνιες μισθώσεις (π.χ. Airbnb) επιτρέπονται με κατάλληλη εγγραφή στο Μητρώο Τουρισμού. Η Ήπειρος εμφανίζει ισχυρή τουριστική ζήτηση, ιδίως κοντά στην Πάργα, Πρέβεζα και τον Αχέροντα, καθιστώντας τις διακοπές ιδανική επένδυση."
+        }
+      ]
     },
     footer: {
       desc: "Επιμελούμαστε το καλύτερο χαρτοφυλάκιο ακινήτων στη Βορειοδυτική Ελλάδα. Παρέχουμε εξατομικευμένες υπηρεσίες για απαιτητικούς αγοραστές που αναζητούν πολυτέλεια, κληρονομιά και φυσική ομορφιά.",
@@ -601,6 +667,12 @@ export const translations = {
         title: "Μοναδικό Ακίνητο / Ξενοδοχείο 450τ.μ στην Αμμουδιά",
         location: "Αμμουδιά, Δήμος Πάργας",
         description: "Μοναδικό Ακίνητο ξενοδοχείο η προσωπική χρήση Πρώτη γραμμή Ανεμποδιστο κτηριο 450 τ.μ εγκαταστάσεις και οικόπεδο 1000τ.μ 10 διπλα Δωμάτια και 5 σοφίτες,πισινα,μεγαλα μπαλκόνια με inox κάγκελα πάρκινγκ εξωτερικά πρόσθετα μπανια συστημα πυρασφάλειας κλπ..θεα το μοναδικό Ιονιο πέλαγος και έτοιμο για χρήση Στην Αμμουδιά του δημου Πάργας απόσταση απο το Αεροδρόμιο Ακτιου 30 λεπτα και απο τον λιμένα ηγουμενιτσας 30 λεπτα παρακαλώ μονο Σοβαρές προτάσεις Αποκλειστικά στο epirus real estate... Τιμή 1,200,000 €."
+      },
+      {
+        id: 25,
+        title: "Ανεμπόδιστο Οικόπεδο 617τ.μ στη Λούτσα",
+        location: "Λούτσα, Δήμος Πάργας",
+        description: "Πωλείται Ανεμποδιστο οικόπεδο με θεα το απέραντο Γαλάζιο Στην Λουτσα του δημου παργας 617 τ.μ με Δόμηση για οικία 240τ.μ Άρτιο οικοδομήσιμο εντος σχεδίου πρόσοψη σε Δημοτική οδό 16, μετρα αμμεσα διαθέσιμο τιμη 100,000 €"
       }
     ]
   }
@@ -1276,6 +1348,22 @@ export const BASE_PROPERTIES = [
       "/prop-16/674992495_917205574476905_8574216488550525324_n.jpg",
       "/prop-16/675546509_917209797809816_7542560487035957690_n.jpg",
       "/prop-16/676795564_917208754476587_4643470191249692222_n.jpg"
+    ]
+  },
+  {
+    id: 25,
+    price: "€100,000",
+    beds: "-",
+    baths: "-",
+    sqm: "617",
+    image: "/land-9/688824653_931877656343030_2338139928954048683_n.jpg",
+    images: [
+      "/land-9/688824653_931877656343030_2338139928954048683_n.jpg",
+      "/land-9/689562828_931877329676396_4482867615871456990_n.jpg",
+      "/land-9/689767826_931877456343050_5194756464611815640_n.jpg",
+      "/land-9/689891149_931877406343055_871590738244175342_n.jpg",
+      "/land-9/694872526_931877546343041_8443149750118968923_n.jpg",
+      "/land-9/695222570_931877599676369_4128877739903700088_n.jpg"
     ]
   }
 ];

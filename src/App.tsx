@@ -795,8 +795,104 @@ const PROPERTIES = [
       ],
       featured: false,
       description: "Μοναδικό Ακίνητο ξενοδοχείο η προσωπική χρήση Πρώτη γραμμή Ανεμποδιστο κτηριο 450 τ.μ εγκαταστάσεις και οικόπεδο 1000τ.μ 10 διπλα Δωμάτια και 5 σοφίτες,πισινα,μεγαλα μπαλκόνια με inox κάγκελα πάρκινγκ εξωτερικά πρόσθετα μπανια συστημα πυρασφάλειας κλπ..θεα το μοναδικό Ιονιο πέλαγος και έτοιμο για χρήση Στην Αμμουδιά του δημου Πάργας απόσταση απο το Αεροδρόμιο Ακτιου 30 λεπτα και απο τον λιμένα ηγουμενιτσας 30 λεπτα παρακαλώ μονο Σοβαρές προτάσεις Αποκλειστικά στο epirus real estate..."
+    },
+    {
+      id: 25,
+      title: "Ανεμπόδιστο Οικόπεδο 617τ.μ στη Λούτσα",
+      location: "Λούτσα, Δήμος Πάργας",
+      price: "€100,000",
+      type: "land",
+      beds: "-",
+      baths: "-",
+      sqm: "617",
+      image: "/land-9/688824653_931877656343030_2338139928954048683_n.jpg",
+      images: [
+        "/land-9/688824653_931877656343030_2338139928954048683_n.jpg",
+        "/land-9/689562828_931877329676396_4482867615871456990_n.jpg",
+        "/land-9/689767826_931877456343050_5194756464611815640_n.jpg",
+        "/land-9/689891149_931877406343055_871590738244175342_n.jpg",
+        "/land-9/694872526_931877546343041_8443149750118968923_n.jpg",
+        "/land-9/695222570_931877599676369_4128877739903700088_n.jpg"
+      ],
+      featured: false,
+      description: "Πωλείται Ανεμποδιστο οικόπεδο με θεα το απέραντο Γαλάζιο Στην Λουτσα του δημου παργας 617 τ.μ με Δόμηση για οικία 240τ.μ Άρτιο οικοδομήσιμο εντος σχεδίου πρόσοψη σε Δημοτική οδό 16, μετρα αμμεσα διαθέσιμο τιμη 100,000 €"
     }
   ];
+
+function FAQSection({ t }: { t: any }) {
+  const [openIndex, setOpenIndex] = useState<number | null>(null);
+
+  const toggle = (i: number) => setOpenIndex(openIndex === i ? null : i);
+
+  return (
+    <section id="faq" className="py-24 bg-ivory">
+      <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="text-center mb-14">
+          <h2 className="text-terracotta text-sm uppercase tracking-widest font-semibold mb-3">{t.faq.subtitle}</h2>
+          <h3 className="font-serif text-4xl md:text-5xl text-aegean">{t.faq.title}</h3>
+        </div>
+
+        <div className="space-y-4">
+          {t.faq.items.map((item: { question: string; answer: string }, i: number) => (
+            <motion.div
+              key={i}
+              initial={{ opacity: 0, y: 10 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.4, delay: i * 0.07 }}
+              className="border border-stone/20 rounded-xl overflow-hidden shadow-sm"
+            >
+              <button
+                id={`faq-item-${i}`}
+                onClick={() => toggle(i)}
+                className="w-full flex items-center justify-between gap-4 px-6 py-5 text-left bg-white hover:bg-aegean/5 transition-colors duration-200 group"
+                aria-expanded={openIndex === i}
+              >
+                <span className="font-serif text-lg text-aegean group-hover:text-terracotta transition-colors duration-200 leading-snug">
+                  {item.question}
+                </span>
+                <span
+                  className="shrink-0 w-8 h-8 rounded-full border border-stone/30 flex items-center justify-center text-aegean group-hover:bg-terracotta group-hover:border-terracotta group-hover:text-ivory transition-all duration-300"
+                  style={{ transform: openIndex === i ? 'rotate(45deg)' : 'rotate(0deg)', transition: 'transform 0.3s ease' }}
+                >
+                  <svg width="14" height="14" viewBox="0 0 14 14" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M7 1V13M1 7H13" stroke="currentColor" strokeWidth="2" strokeLinecap="round"/>
+                  </svg>
+                </span>
+              </button>
+
+              <AnimatePresence initial={false}>
+                {openIndex === i && (
+                  <motion.div
+                    key="content"
+                    initial={{ height: 0, opacity: 0 }}
+                    animate={{ height: 'auto', opacity: 1 }}
+                    exit={{ height: 0, opacity: 0 }}
+                    transition={{ duration: 0.3, ease: 'easeInOut' }}
+                    className="overflow-hidden"
+                  >
+                    <div className="px-6 pb-6 pt-2 bg-white border-t border-stone/10">
+                      <p className="text-stone leading-relaxed">{item.answer}</p>
+                    </div>
+                  </motion.div>
+                )}
+              </AnimatePresence>
+            </motion.div>
+          ))}
+        </div>
+
+        <div className="mt-12 text-center">
+          <a
+            href="#contact"
+            className="inline-flex items-center gap-2 bg-aegean text-ivory px-8 py-3.5 rounded hover:bg-terracotta transition-colors uppercase tracking-widest text-xs font-bold min-h-[48px]"
+          >
+            {t.nav.contact}
+          </a>
+        </div>
+      </div>
+    </section>
+  );
+}
 
 function PropertyCard({ property, index, onViewDetails, t }: { property: any, index: number, onViewDetails: () => void, t: any, key?: React.Key }) {
   const [currentImageIndex, setCurrentImageIndex] = useState(0);
@@ -1637,6 +1733,9 @@ export default function App() {
           </div>
         </div>
       </section>
+
+      {/* FAQ Section */}
+      <FAQSection t={t} />
 
       {/* Contact Form */}
       <section id="contact" className="py-24 bg-stone/5">
