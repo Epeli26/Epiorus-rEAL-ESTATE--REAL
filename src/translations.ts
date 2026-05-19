@@ -334,6 +334,12 @@ export const translations = {
           title: "Unobstructed Plot 617 sq.m in Loutsa",
           location: "Loutsa, Municipality of Parga",
           description: "Unobstructed plot for sale with a view of the endless blue in Loutsa, Municipality of Parga. 617 sq.m with a building capacity of 240 sq.m for a house. Even and buildable, within the city plan, with a 16-meter frontage on a municipal road. Immediately available. Price €100,000."
+        },
+        {
+          id: 26,
+          title: "Plot 500 sq.m in Mesopotamos",
+          location: "Mesopotamos, Municipality of Parga",
+          description: "Plot for sale in Mesopotamos, Municipality of Parga, 500 sq.m. Even and buildable, within the settlement with a building coefficient of 0.40, corner plot. Electricity and water within the plot, fenced, with frontage on 2 roads. Next to a bakery, school, EKAB (first aid), supermarket, cafe, restaurant. Just 3 minutes from Ammoudia beach and 15 minutes from Parga. Price €60,000. Exclusively at Epirus Real Estate."
         }
       ]
   },
@@ -673,6 +679,12 @@ export const translations = {
         title: "Ανεμπόδιστο Οικόπεδο 617τ.μ στη Λούτσα",
         location: "Λούτσα, Δήμος Πάργας",
         description: "Πωλείται Ανεμποδιστο οικόπεδο με θεα το απέραντο Γαλάζιο Στην Λουτσα του δημου παργας 617 τ.μ με Δόμηση για οικία 240τ.μ Άρτιο οικοδομήσιμο εντος σχεδίου πρόσοψη σε Δημοτική οδό 16, μετρα αμμεσα διαθέσιμο τιμη 100,000 €"
+      },
+      {
+        id: 26,
+        title: "Οικόπεδο 500τ.μ στον Μεσοπόταμο",
+        location: "Μεσοπόταμος, Δήμος Πάργας",
+        description: "Πωλείται Στο Μεσοποταμο Δήμος Παργας οικόπεδο 500τ.μ Άρτιο οικοδομήσιμο εντος οικισμόυ με συντελεστή δόμησης 0,40 γωνιακό.Ρευμα νερο εντός οικόπεδου περιφραγμενο και προσώπο σε 2 δρόμους Δίπλα του φούρνος,σχολείο, ΕΚΑΒ,super market,καφε,εστιατόριο,μόλις 3 λεπτα απο την Παραλία Αμμουδιας και 15 απο Παργα..τιμη 60,000 € Αποκλειστικά στο epirus real estate"
       }
     ]
   }
@@ -1364,6 +1376,25 @@ export const BASE_PROPERTIES = [
       "/land-9/689891149_931877406343055_871590738244175342_n.jpg",
       "/land-9/694872526_931877546343041_8443149750118968923_n.jpg",
       "/land-9/695222570_931877599676369_4128877739903700088_n.jpg"
+    ]
+  },
+  {
+    id: 26,
+    price: "€60,000",
+    beds: "-",
+    baths: "-",
+    sqm: "500",
+    image: "/prop-17/700707948_940527705478025_671377063847467200_n.jpg",
+    images: [
+      "/prop-17/700707948_940527705478025_671377063847467200_n.jpg",
+      "/prop-17/700707948_940528578811271_1487669984912127786_n.jpg",
+      "/prop-17/700871054_940527842144678_3428711382067687738_n.jpg",
+      "/prop-17/701496262_940528628811266_2150683550294689929_n.jpg",
+      "/prop-17/701663981_940528545477941_1297907025265615709_n.jpg",
+      "/prop-17/702078060_940527632144699_5909065627384635815_n.jpg",
+      "/prop-17/703200864_940527768811352_6818045794163585992_n.jpg",
+      "/prop-17/703503716_940527898811339_6066809323745873869_n.jpg",
+      "/prop-17/703572143_940527985477997_3795184076495022060_n.jpg"
     ]
   }
 ];
