@@ -289,9 +289,9 @@ export const translations = {
       },
       {
         id: 18,
-        title: "Fully Renovated Apartment in Kolonaki",
-        location: "Kolonaki",
-        description: "Apartment description in Kolonaki. 135sqm on the 5th floor, 1 bedroom, 2 bathrooms. Features: Living room, dining room, kitchen, Air conditioning, Solar water heater, Fireplace, Autonomous heating, Fully renovated. Sale price €900,000."
+        title: "Plot 1,130 sq.m in Tsouknida",
+        location: "Tsouknida, Municipality of Parga",
+        description: "Plot for sale 1,130 sq.m. in the Municipal District of Tsouknida, Municipality of Parga. The plot is located within the settlement and is even and buildable, clean with 40 olive trees. Direct access as it has a road frontage, easy access and a quiet environment, just 5 minutes from the beaches of Loutsa, Vrachos, and Alonaki Skala Kerentza. Suitable for professional or personal use. Price €100,000."
       },
       {
         id: 19,
@@ -342,7 +342,7 @@ export const translations = {
           description: "Plot for sale in Mesopotamos, Municipality of Parga, 500 sq.m. Even and buildable, within the settlement with a building coefficient of 0.40, corner plot. Electricity and water within the plot, fenced, with frontage on 2 roads. Next to a bakery, school, EKAB (first aid), supermarket, cafe, restaurant. Just 3 minutes from Ammoudia beach and 15 minutes from Parga. Price €60,000. Exclusively at Epirus Real Estate."
         }
       ]
-  },
+    },
 
   el: {
     nav: {
@@ -634,9 +634,9 @@ export const translations = {
       },
       {
         id: 18,
-        title: "Πλήρως ανακαινισμένο Διαμέρισμα στο Κολωνάκι",
-        location: "Κολωνάκι",
-        description: "Περιγραφή του διαμερίσματος στο Κολωνάκι. 135τμ στον 5ο όροφο, 1 υπνοδωμάτιο, 2 μπάνια. Σαλόνι, τραπεζαρία, κουζίνα. Κλιματισμό, Ηλιακό θερμοσίφωνα, Τζάκι, Αυτόνομη θέρμανση, Πλήρως ανακαινισμένο. Τιμή πώλησης 900.000€."
+        title: "Οικόπεδο 1,130τ.μ στην Τσουκνίδα",
+        location: "Τσουκνίδα, Δήμος Πάργας",
+        description: "Πωλείται οικόπεδο 1,130τ.μ Στο Δ.δ Τσουκνιδας του Δημου Παργας Το οικόπεδο βρίσκεται εντός οικισμόυ και ειναι Άρτιο και οικοδομήσιμο καθαρό με 40 ελαιόδεντρα Αμεση πρόσβαση λογο του οτι  διέρχεται με πρόσοψη δρόμος εύκολη πρόσβαση και ήσυχο  περιβάλλον μολις 5 λεπτα απο της παραλίες Λουτσα βράχος και Αλωνακι σκαλα κερετζα..κατάλληλο για επαγγελματική η προσωπική χρήση τιμη 100,000 €"
       },
       {
         id: 19,
@@ -1166,21 +1166,28 @@ export const BASE_PROPERTIES = [
   },
   {
     id: 18,
-    price: "€900,000",
-    beds: 1,
-    baths: 2,
-    sqm: 135,
-    image: "/prop-13/11debdd1-3628-42ac-8237-e78f43f558dc.jpg",
+    price: "€100,000",
+    beds: "-",
+    baths: "-",
+    sqm: "1130",
+    image: "/prop-18/706982312_27348147584811227_2951056327653319802_n.jpg",
     images: [
-      "/prop-13/11debdd1-3628-42ac-8237-e78f43f558dc.jpg",
-      "/prop-13/2ab65558-6bcc-4f17-bb03-afeba7e531b7.jpg",
-      "/prop-13/472d7f90-49aa-4b83-b2b4-87dc710d8227.jpg",
-      "/prop-13/4f5acc81-fa69-4832-ae02-387453db4ee3.jpg",
-      "/prop-13/7ee8245e-b30d-4c6f-97cd-e0699325ca18.jpg",
-      "/prop-13/88319c4a-ca36-4878-b75a-af119ba753ee.jpg",
-      "/prop-13/afd4ac1a-83b4-4683-87a3-b729fa485359.jpg",
-      "/prop-13/d8a733fe-b03f-4551-9f33-5a12944c05ee.jpg",
-      "/prop-13/f788fb59-b3a6-47e3-87e7-e3053b99563b.jpg"
+      "/prop-18/706982312_27348147584811227_2951056327653319802_n.jpg",
+      "/prop-18/704703576_27348172814808704_5380940173926210411_n.jpg",
+      "/prop-18/704763873_27348149404811045_9113504354462273661_n.jpg",
+      "/prop-18/706123244_27348158301476822_5654877287722567287_n.jpg",
+      "/prop-18/706219507_27348157648143554_809091603086622301_n.jpg",
+      "/prop-18/706711470_27348154311477221_7312427354447860913_n.jpg",
+      "/prop-18/706734424_27348171691475483_9222985711031440590_n.jpg",
+      "/prop-18/706971825_27348173674808618_6434885844009905432_n.jpg",
+      "/prop-18/707340361_27348173188142000_5584938500452382714_n.jpg",
+      "/prop-18/707434611_27348155231477129_1411124913275644835_n.jpg",
+      "/prop-18/707510427_27348156908143628_7638425542862074264_n.jpg",
+      "/prop-18/707601367_27348173404808645_5789375938111784118_n.jpg",
+      "/prop-18/707602391_27348152954810690_1953126499621441896_n.jpg",
+      "/prop-18/707875927_27348151154810870_1555245063233949124_n.jpg",
+      "/prop-18/707914989_27348170588142260_7627346494566439366_n.jpg",
+      "/prop-18/708223395_27348156191477033_7463630436980762778_n.jpg"
     ]
   },
   {
