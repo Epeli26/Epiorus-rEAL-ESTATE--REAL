@@ -295,9 +295,9 @@ export const translations = {
       },
       {
         id: 19,
-        title: "Exclusive Party Residence in Mykonos",
-        location: "Mykonos",
-        description: "Property Features: Estate area: 5500 sq.m. Building: 480 sq.m. Spectacular view towards the islands of Naxos, Paros and Delos. Nearby beaches: Agrari, Elia, Super Paradise. Tornado: Not affected by north winds. Party Residence: First floor: Kitchen, living room, guest toilet. Main bedroom with outdoor courtyards, pool and church. Second floor: Three bedrooms with private bathrooms. Lounge, bar and covered balcony for unforgettable moments of relaxation. Third floor: Two independent suites with living rooms, kitchens and bathrooms, offering absolute privacy. This residence is not just a house, but a world where luxury meets authentic Mykonian hospitality. It is a place where the beauty of nature combines with architectural elegance, creating a dreamy and unforgettable space."
+        title: "Plot 2,800 sq.m in Ammoudia",
+        location: "Ammoudia, Municipality of Parga",
+        description: "Plot for sale in front of the Acheron River in the Municipal District of Ammoudia, Municipality of Parga. Next to the new bridge connecting to Kerentza, Alonaki, and Skala beaches. Suitable for professional use, 2,800 sq.m. with a 26-meter frontage on the road network. Price €200,000."
       },
       {
         id: 20,
@@ -640,9 +640,9 @@ export const translations = {
       },
       {
         id: 19,
-        title: "Αποκλειστική Κατοικία Εκδηλώσεων στην Μύκονο",
-        location: "Μύκονος",
-        description: "Χαρακτηριστικά Ακινήτου: Εμβαδόν κτήματος: 5500 τ.μ. Κτίριο: 480 τ.μ. Εκπληκτική θέα προς τα νησιά Νάξο, Πάρο και Δήλο. Κοντινές παραλίες: Αγράρι, Ελιά, Super Paradise. Προστατευμένο από τους βόρειους ανέμους. Κατοικία Εκδηλώσεων: Πρώτος όροφος: Κουζίνα, σαλόνι, WC επισκεπτών. Κύριο υπνοδωμάτιο με εξωτερικές αυλές, πισίνα και εκκλησάκι. Δεύτερος όροφος: Τρία υπνοδωμάτια με ιδιωτικά μπάνια. Σαλόνι, μπαρ και σκεπαστό μπαλκόνι. Τρίτος όροφος: Δύο ανεξάρτητες σουίτες με σαλόνια, κουζίνες και μπάνια. Αυτή η κατοικία δεν είναι απλώς ένα σπίτι, αλλά ένας κόσμος όπου η πολυτέλεια συναντά την αυθεντική μυκονιάτικη φιλοξενία."
+        title: "Τεμάχιο 2,800τ.μ στην Αμμουδιά",
+        location: "Αμμουδιά, Δήμος Πάργας",
+        description: "Πωλείται Τεμάχιο μπροστά στον Αχέροντα Στο Δημοτικό διαμέρισμα Αμμουδιας του Δημου Παργας  διπλα του η νεα γεφυρα ένωσης με ρης παραλιες Κερετζα Αλωνακι σκαλα κατάλληλο για επαγγελματική χρήση 2,800τ.μ με πρόσοψη 26 μετρα σε οδικό δίκτυο τιμη 200,000€"
       },
       {
         id: 20,
@@ -1192,25 +1192,23 @@ export const BASE_PROPERTIES = [
   },
   {
     id: 19,
-    price: "€5,000,000",
-    beds: 6,
-    baths: 6,
-    sqm: 480,
-    image: "/prop-14/WhatsApp Image 2026-04-06 at 15.57.49 (3).jpeg",
+    price: "€200,000",
+    beds: "-",
+    baths: "-",
+    sqm: "2800",
+    image: "/prop-19/707828016_27384215194537799_5641663451890429667_n.jpg",
     images: [
-      "/prop-14/WhatsApp Image 2026-04-06 at 15.57.49 (3).jpeg",
-      "/prop-14/WhatsApp Image 2026-04-06 at 15.57.40 (1).jpeg",
-      "/prop-14/WhatsApp Image 2026-04-06 at 15.57.40 (2).jpeg",
-      "/prop-14/WhatsApp Image 2026-04-06 at 15.57.40.jpeg",
-      "/prop-14/WhatsApp Image 2026-04-06 at 15.57.41 (1).jpeg",
-      "/prop-14/WhatsApp Image 2026-04-06 at 15.57.41 (2).jpeg",
-      "/prop-14/WhatsApp Image 2026-04-06 at 15.57.41 (3).jpeg",
-      "/prop-14/WhatsApp Image 2026-04-06 at 15.57.41 (4).jpeg",
-      "/prop-14/WhatsApp Image 2026-04-06 at 15.57.41.jpeg",
-      "/prop-14/WhatsApp Image 2026-04-06 at 15.57.42 (1).jpeg",
-      "/prop-14/WhatsApp Image 2026-04-06 at 15.57.42 (2).jpeg",
-      "/prop-14/WhatsApp Image 2026-04-06 at 15.57.42 (3).jpeg",
-      "/prop-14/WhatsApp Image 2026-04-06 at 15.57.42 (4).jpeg"
+      "/prop-19/707828016_27384215194537799_5641663451890429667_n.jpg",
+      "/prop-19/708179701_27384214084537910_6020414352939347822_n.jpg",
+      "/prop-19/708179703_27384234247869227_5517259661927292726_n.jpg",
+      "/prop-19/708242704_27384219817870670_6501696819521801862_n.jpg",
+      "/prop-19/708243806_27384221567870495_8423962817476837095_n.jpg",
+      "/prop-19/708261076_27384217674537551_3635757562912835419_n.jpg",
+      "/prop-19/708300596_27384218747870777_1848360555935002609_n.jpg",
+      "/prop-19/708312929_27384222701203715_5578061576020790750_n.jpg",
+      "/prop-19/709709526_27384214547871197_4929694176851376165_n.jpg",
+      "/prop-19/709737348_27384216864537632_6879200852081930556_n.jpg",
+      "/prop-19/710710612_27384216067871045_1275054030879987876_n.jpg"
     ]
   },
   {
