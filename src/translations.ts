@@ -340,6 +340,12 @@ export const translations = {
           title: "Plot 500 sq.m in Mesopotamos",
           location: "Mesopotamos, Municipality of Parga",
           description: "Plot for sale in Mesopotamos, Municipality of Parga, 500 sq.m. Even and buildable, within the settlement with a building coefficient of 0.40, corner plot. Electricity and water within the plot, fenced, with frontage on 2 roads. Next to a bakery, school, EKAB (first aid), supermarket, cafe, restaurant. Just 3 minutes from Ammoudia beach and 15 minutes from Parga. Price €60,000. Exclusively at Epirus Real Estate."
+        },
+        {
+          id: 27,
+          title: "Buildable Plot 1,200 sq.m in Kanallaki",
+          location: "Kanallaki, Municipality of Parga",
+          description: "Plot for sale in Kanallaki, Municipality of Parga, even and buildable, 1,200 sq.m with a building coefficient of 0.80 and a 40-meter frontage on a road. Located in a quiet area, suitable for professional or private use. Subdivision is also possible. Flat, clean, and with several olive trees. Price €125,000."
         }
       ]
     },
@@ -685,6 +691,12 @@ export const translations = {
         title: "Οικόπεδο 500τ.μ στον Μεσοπόταμο",
         location: "Μεσοπόταμος, Δήμος Πάργας",
         description: "Πωλείται Στο Μεσοποταμο Δήμος Παργας οικόπεδο 500τ.μ Άρτιο οικοδομήσιμο εντος οικισμόυ με συντελεστή δόμησης 0,40 γωνιακό.Ρευμα νερο εντός οικόπεδου περιφραγμενο και προσώπο σε 2 δρόμους Δίπλα του φούρνος,σχολείο, ΕΚΑΒ,super market,καφε,εστιατόριο,μόλις 3 λεπτα απο την Παραλία Αμμουδιας και 15 απο Παργα..τιμη 60,000 € Αποκλειστικά στο epirus real estate"
+      },
+      {
+        id: 27,
+        title: "Οικόπεδο 1,200τ.μ στο Καναλλάκι",
+        location: "Καναλλάκι, Δήμος Πάργας",
+        description: "Πωλείται Στο καναλλακι του Δήμου Πάργας οικόπεδο άρτιο οικοδομήσιμο 1,200τ.μ με συντελεστή δόμησης 0,80 με προσώπο σε δρόμο 40 μετρα σε ήσυχη τοποθεσία κατάλληλο για επαγγελματική χρήση η ιδιωτική μπορεί να γίνει και κατάτμηση...Επίπεδο καθαρό και με αρκετά ελαιόδεντρα τιμη 125,000€"
       }
     ]
   }
@@ -1400,6 +1412,30 @@ export const BASE_PROPERTIES = [
       "/prop-17/703200864_940527768811352_6818045794163585992_n.jpg",
       "/prop-17/703503716_940527898811339_6066809323745873869_n.jpg",
       "/prop-17/703572143_940527985477997_3795184076495022060_n.jpg"
+    ]
+  },
+  {
+    id: 27,
+    price: "€125,000",
+    beds: "-",
+    baths: "-",
+    sqm: "1,200",
+    image: "/prop-20/707838713_949264341271028_862689535898278532_n.jpg",
+    images: [
+      "/prop-20/707838713_949264341271028_862689535898278532_n.jpg",
+      "/prop-20/708211027_949264407937688_3680650410648929694_n.jpg",
+      "/prop-20/708289786_949265054604290_7152768891708564065_n.jpg",
+      "/prop-20/708333743_949264197937709_4759542980113486695_n.jpg",
+      "/prop-20/708345362_949264471271015_3349584486731398547_n.jpg",
+      "/prop-20/708345370_949264621271000_774903353020613338_n.jpg",
+      "/prop-20/709101609_949265017937627_451200239253275420_n.jpg",
+      "/prop-20/709101661_949264951270967_8952046774850782681_n.jpg",
+      "/prop-20/709155650_949265107937618_5006725848505014096_n.jpg",
+      "/prop-20/709821641_949264547937674_1435109042433683804_n.jpg",
+      "/prop-20/710613597_949264274604368_3349374204039133640_n.jpg",
+      "/prop-20/710710612_949264851270977_1028821537587193494_n.jpg",
+      "/prop-20/710890283_949264701270992_2659961880580467681_n.jpg",
+      "/prop-20/711618864_949264771270985_2820633996141160113_n.jpg"
     ]
   }
 ];
