@@ -346,6 +346,12 @@ export const translations = {
           title: "Buildable Plot 1,200 sq.m in Kanallaki",
           location: "Kanallaki, Municipality of Parga",
           description: "Plot for sale in Kanallaki, Municipality of Parga, even and buildable, 1,200 sq.m with a building coefficient of 0.80 and a 40-meter frontage on a road. Located in a quiet area, suitable for professional or private use. Subdivision is also possible. Flat, clean, and with several olive trees. Price €125,000."
+        },
+        {
+          id: 28,
+          title: "Unique Investment Property 10,500 sq.m in Syvota",
+          location: "Syvota, Thesprotia",
+          description: "A unique investment property in Syvota, Thesprotia, right in front of the crystal clear waters of the Ionian Sea. 10,500 sq.m. The property has direct beach frontage with unique privileges of direct access to the beach. Fenced, with a layout and pathways, rooms, and other amenities (Cafe, Food)... Exclusively at Epirus Real Estate. Serious inquiries only please. Contact at Tatosxristos@gmail.com or by phone at +30 694 486 6469."
         }
       ]
     },
@@ -697,6 +703,12 @@ export const translations = {
         title: "Οικόπεδο 1,200τ.μ στο Καναλλάκι",
         location: "Καναλλάκι, Δήμος Πάργας",
         description: "Πωλείται Στο καναλλακι του Δήμου Πάργας οικόπεδο άρτιο οικοδομήσιμο 1,200τ.μ με συντελεστή δόμησης 0,80 με προσώπο σε δρόμο 40 μετρα σε ήσυχη τοποθεσία κατάλληλο για επαγγελματική χρήση η ιδιωτική μπορεί να γίνει και κατάτμηση...Επίπεδο καθαρό και με αρκετά ελαιόδεντρα τιμη 125,000€"
+      },
+      {
+        id: 28,
+        title: "Επενδυτικό Ακίνητο 10,500τ.μ στα Σύβοτα",
+        location: "Σύβοτα Θεσπρωτίας",
+        description: "Ενα Μοναδικό Επενδυτικό Ακίνητο Στα  Συβοτα Θεσπρωτίας  μπροστά Στα Καταγάλανα Νερά του Ιονίου.10,500 τ.μ Το Ακίνητο εχει πρόσοψη Στην Παραλία Με μοναδικά Προνόμια Την Άμεση επαφή με την Παραλία περιφραγμενο με σχέδιο και διαδρόμους Δωμάτια Και άλλες Παροχές Καφέ, Φαγητό...Αποκλειστικά στο Epirus Real Epirus real estate Παρακαλώ μονο Σοβαρές προτάσεις Επικοινωνία Στο Tatosxristos@gmail.com η Στο τηλέφωνο 694 486 6469"
       }
     ]
   }
@@ -1425,6 +1437,7 @@ export const BASE_PROPERTIES = [
       "/prop-20/707838713_949264341271028_862689535898278532_n.jpg",
       "/prop-20/708211027_949264407937688_3680650410648929694_n.jpg",
       "/prop-20/708289786_949265054604290_7152768891708564065_n.jpg",
+      "/prop-20/708333743_949264197937709_4759542980113486695_n (1).jpg",
       "/prop-20/708333743_949264197937709_4759542980113486695_n.jpg",
       "/prop-20/708345362_949264471271015_3349584486731398547_n.jpg",
       "/prop-20/708345370_949264621271000_774903353020613338_n.jpg",
@@ -1436,6 +1449,26 @@ export const BASE_PROPERTIES = [
       "/prop-20/710710612_949264851270977_1028821537587193494_n.jpg",
       "/prop-20/710890283_949264701270992_2659961880580467681_n.jpg",
       "/prop-20/711618864_949264771270985_2820633996141160113_n.jpg"
+    ]
+  },
+  {
+    id: 28,
+    price: "POA",
+    beds: "-",
+    baths: "-",
+    sqm: "10,500",
+    image: "/prop-21/714912110_27507535372205780_4825578739082934548_n.jpg",
+    images: [
+      "/prop-21/714912110_27507535372205780_4825578739082934548_n.jpg",
+      "/prop-21/715331370_27507535595539091_7262551474871455123_n.jpg",
+      "/prop-21/715376261_27507534652205852_8727725576622511001_n.jpg",
+      "/prop-21/715435983_27507535848872399_2527952101651415233_n.jpg",
+      "/prop-21/715464945_27507533662205951_1253729385962345205_n.jpg",
+      "/prop-21/715689903_27507533428872641_307751677272889937_n.jpg",
+      "/prop-21/716610771_27507534385539212_7135420472904377517_n.jpg",
+      "/prop-21/717048488_27507536162205701_3081614454015380011_n.jpg",
+      "/prop-21/717187290_27507533918872592_252306968814642977_n.jpg",
+      "/prop-21/719069337_27507534155539235_1358002432095476380_n.jpg"
     ]
   }
 ];
