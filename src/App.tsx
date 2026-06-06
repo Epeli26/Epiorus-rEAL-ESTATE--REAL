@@ -1316,14 +1316,17 @@ function AllPropertiesModal({ isOpen, onClose, properties, t, key }: { isOpen: b
 
   const filteredProperties = properties.filter(prop => {
     const priceNum = parseInt(prop.price.replace(/[^0-9]/g, ''));
+    const isPOA = isNaN(priceNum);
     const minPriceNum = filters.minPrice ? parseInt(filters.minPrice) : 0;
     const maxPriceNum = filters.maxPrice ? parseInt(filters.maxPrice) : Infinity;
     const propBeds = prop.beds === '-' ? 0 : parseInt(prop.beds);
     const minBedsNum = filters.beds === 'any' ? 0 : parseInt(filters.beds);
 
+    // POA properties always pass the price filter
+    const priceOk = isPOA || (priceNum >= minPriceNum && priceNum <= maxPriceNum);
+
     return (
-      priceNum >= minPriceNum &&
-      priceNum <= maxPriceNum &&
+      priceOk &&
       (filters.location === '' || prop.location === filters.location) &&
       (filters.type === '' || prop.type === filters.type) &&
       (propBeds >= minBedsNum || (filters.beds === '5' && propBeds >= 5))
