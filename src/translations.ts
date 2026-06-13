@@ -347,6 +347,13 @@ export const translations = {
           location: "Kanallaki, Municipality of Parga",
           description: "Plot for sale in Kanallaki, Municipality of Parga, even and buildable, 1,200 sq.m with a building coefficient of 0.80 and a 40-meter frontage on a road. Located in a quiet area, suitable for professional or private use. Subdivision is also possible. Flat, clean, and with several olive trees. Price €125,000."
         },
+        {
+          id: 29,
+          title: "Unique Land Plot in Valtos, Parga",
+          location: "Valtos, Parga",
+          price: "POA",
+          description: "For sale, a unique land plot in Valtos, Parga, with a total area of 1,100 sq.m. It is even and buildable with a 50% building factor, suitable for private and commercial investment. The plot is adjacent to the road, offering very easy access."
+        },
       ]
     },
 
@@ -697,6 +704,13 @@ export const translations = {
         title: "Οικόπεδο 1,200τ.μ στο Καναλλάκι",
         location: "Καναλλάκι, Δήμος Πάργας",
         description: "Πωλείται Στο καναλλακι του Δήμου Πάργας οικόπεδο άρτιο οικοδομήσιμο 1,200τ.μ με συντελεστή δόμησης 0,80 με προσώπο σε δρόμο 40 μετρα σε ήσυχη τοποθεσία κατάλληλο για επαγγελματική χρήση η ιδιωτική μπορεί να γίνει και κατάτμηση...Επίπεδο καθαρό και με αρκετά ελαιόδεντρα τιμη 125,000€"
+      },
+      {
+        id: 29,
+        title: "Μοναδικό οικόπεδο στο Βάλτο Πάργας",
+        location: "Βάλτος, Πάργα",
+        price: "Κατόπιν επικοινωνίας",
+        description: "Πωλείται μοναδικό οικόπεδο στο Βάλτο Πάργας εμβαδού 1,100 τ.μ. Είναι άρτιο και οικοδομήσιμο με συντελεστή δόμησης 50%, κατάλληλο για ιδιωτική και επαγγελματική επένδυση. Το οικόπεδο εφάπτεται επί της οδού με εύκολη πρόσβαση."
       },
     ]
   }
@@ -1437,6 +1451,22 @@ export const BASE_PROPERTIES = [
       "/prop-20/710710612_949264851270977_1028821537587193494_n.jpg",
       "/prop-20/710890283_949264701270992_2659961880580467681_n.jpg",
       "/prop-20/711618864_949264771270985_2820633996141160113_n.jpg"
+    ]
+  },
+  {
+    id: 29,
+    price: "POA",
+    beds: "-",
+    baths: "-",
+    sqm: "1,100",
+    image: "/prop-22/724087146_961737870023675_6047069163655358275_n.jpg",
+    images: [
+      "/prop-22/724087146_961737870023675_6047069163655358275_n.jpg",
+      "/prop-22/721209279_961737800023682_3291988414179636101_n.jpg",
+      "/prop-22/722268341_961738003356995_5593320278695042617_n.jpg",
+      "/prop-22/723600220_961737923357003_9011754904811358238_n.jpg",
+      "/prop-22/724047007_961737963356999_2846353541055571645_n.jpg",
+      "/prop-22/724052449_961737840023678_5641662157253699322_n.jpg"
     ]
   }
 ];

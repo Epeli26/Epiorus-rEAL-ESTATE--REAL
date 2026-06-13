@@ -12,6 +12,27 @@ import { PrivacyPolicyContent } from './PrivacyPolicyContent';
 
 const PROPERTIES = [
   {
+    id: 29,
+    title: "Μοναδικό οικόπεδο στο Βάλτο Πάργας",
+    location: "Βάλτος, Πάργα",
+    price: "Κατόπιν επικοινωνίας",
+    type: "land",
+    beds: "-",
+    baths: "-",
+    sqm: "1,100",
+    image: "/prop-22/724087146_961737870023675_6047069163655358275_n.jpg",
+    images: [
+      "/prop-22/724087146_961737870023675_6047069163655358275_n.jpg",
+      "/prop-22/721209279_961737800023682_3291988414179636101_n.jpg",
+      "/prop-22/722268341_961738003356995_5593320278695042617_n.jpg",
+      "/prop-22/723600220_961737923357003_9011754904811358238_n.jpg",
+      "/prop-22/724047007_961737963356999_2846353541055571645_n.jpg",
+      "/prop-22/724052449_961737840023678_5641662157253699322_n.jpg"
+    ],
+    featured: false,
+    description: "Πωλείται μοναδικό οικόπεδο στο Βάλτο Πάργας εμβαδού 1,100 τ.μ. Είναι άρτιο και οικοδομήσιμο με συντελεστή δόμησης 50%, κατάλληλο για ιδιωτική και επαγγελματική επένδυση. Το οικόπεδο εφάπτεται επί της οδού με εύκολη πρόσβαση."
+  },
+  {
     id: 27,
     title: "Οικόπεδο 1,200τ.μ στο Καναλλάκι",
     location: "Καναλλάκι, Δήμος Πάργας",
@@ -1495,6 +1516,7 @@ export default function App() {
       title: translation?.title || prop.title,
       location: translation?.location || prop.location,
       description: translation?.description || prop.description,
+      price: translation?.price || prop.price,
     };
   });
 
