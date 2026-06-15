@@ -354,6 +354,18 @@ export const translations = {
           price: "POA",
           description: "For sale, a unique land plot in Valtos, Parga, with a total area of 1,100 sq.m. It is even and buildable with a 50% building factor, suitable for private and commercial investment. The plot is adjacent to the road, offering very easy access."
         },
+        {
+          id: 30,
+          title: "Unique Property in Parga with Unobstructed View",
+          location: "Parga, Epirus",
+          description: "A unique property in beautiful Parga with unparalleled and unobstructed views. On a 3,500 sq.m plot with building capacity of up to 240 sq.m, sold at the price of €280,000. Contact / WhatsApp: 694 486 6469"
+        },
+        {
+          id: 31,
+          title: "Hotel Ready for Operation in Ammoudia",
+          location: "Ammoudia, Municipality of Parga",
+          description: "Hotel for sale ready for operation in Ammoudia, Municipality of Parga. On a 520 sq.m plot. Consists of 15 rooms (twin and triple) and 2 apartments. 500 meters from the sea. Reception, parking area, easy access. Only needs exterior painting. Immediately available. Information at Epirus Real Estate web www.epirusestate.com or WhatsApp 694 486 6469"
+        }
       ]
     },
 
@@ -712,6 +724,18 @@ export const translations = {
         price: "Κατόπιν επικοινωνίας",
         description: "Πωλείται μοναδικό οικόπεδο στο Βάλτο Πάργας εμβαδού 1,100 τ.μ. Είναι άρτιο και οικοδομήσιμο με συντελεστή δόμησης 50%, κατάλληλο για ιδιωτική και επαγγελματική επένδυση. Το οικόπεδο εφάπτεται επί της οδού με εύκολη πρόσβαση."
       },
+      {
+        id: 30,
+        title: "Μοναδικό Ακίνητο στην Πάργα με Ανεμπόδιστη Θέα",
+        location: "Πάργα, Ήπειρος",
+        description: "Ένα Μοναδικό Ακίνητο Στην όμορφη Πάργα με απαράμιλλη και Ανεμπόδιστη θέα. Σε οικόπεδο 3,500τ.μ με δόμηση έως 240τ.μ πωλείται στην τιμή των 280.000 €. Επικοινωνία / WhatsApp: 694 486 6469"
+      },
+      {
+        id: 31,
+        title: "Ξενοδοχείο έτοιμο προς εκμετάλλευση στην Αμμουδιά",
+        location: "Αμμουδιά, Δήμος Πάργας",
+        description: "Πωλείται Ξενοδοχείο έτοιμο προς εκμετάλλευση Στην Αμμουδιά του Δημου Παργας Σε οικόπεδο 520τ.μ Αποτελείται απο 15 Δωμάτια 2 κλινα και 3 κλινα και 2 διαμερισματα Απόσταση απο την θάλασσα 500 μετρα reception, χώρος parking εύκολη πρόσβαση, χρήζει μονο εξωτερικής βαφής Άμεσα διαθέσιμο...!!! Πληροφορίες στο Epirus real estate web www epirusestate. Wats app 694 486 6469"
+      }
     ]
   }
 };
@@ -1467,6 +1491,55 @@ export const BASE_PROPERTIES = [
       "/prop-22/723600220_961737923357003_9011754904811358238_n.jpg",
       "/prop-22/724047007_961737963356999_2846353541055571645_n.jpg",
       "/prop-22/724052449_961737840023678_5641662157253699322_n.jpg"
+    ]
+  },
+  {
+    id: 30,
+    price: "€280,000",
+    beds: "-",
+    baths: "-",
+    sqm: "3,500",
+    image: "/prop-23/721779289_27625802853712364_5790674503337974798_n.jpg",
+    images: [
+      "/prop-23/721779289_27625802853712364_5790674503337974798_n.jpg",
+      "/prop-23/721880699_27625806520378664_4486935602513006942_n.jpg",
+      "/prop-23/722147721_27625803797045603_8242923375315173157_n.jpg",
+      "/prop-23/722563670_27625802163712433_6582826102782779632_n.jpg",
+      "/prop-23/723844342_27625806137045369_7866915054132917121_n.jpg",
+      "/prop-23/724105181_27625804447045538_7667878250616863143_n.jpg",
+      "/prop-23/724257221_27625801313712518_5254506190669875404_n.jpg",
+      "/prop-23/724328943_27625806740378642_4781625320645707794_n.jpg",
+      "/prop-23/724350751_27625808993711750_3981887848164976638_n.jpg",
+      "/prop-23/724541152_27625805370378779_3030065749148677781_n.jpg"
+    ]
+  },
+  {
+    id: 31,
+    price: "POA",
+    beds: "-",
+    baths: "-",
+    sqm: "520",
+    image: "/prop-21/720408297_959231790274283_5542458433368530343_n.jpg",
+    images: [
+      "/prop-21/720408297_959231790274283_5542458433368530343_n.jpg",
+      "/prop-21/720675987_959231710274291_2174222902506382565_n.jpg",
+      "/prop-21/720784732_959232666940862_7454329285561575354_n.jpg",
+      "/prop-21/720814527_959232743607521_5024454347324286327_n.jpg",
+      "/prop-21/720988492_959231403607655_2771012081404612473_n.jpg",
+      "/prop-21/721035725_959232363607559_6910290776799204711_n.jpg",
+      "/prop-21/721035727_959232306940898_4955534252002318078_n.jpg",
+      "/prop-21/721051711_959231343607661_7123481060854245874_n.jpg",
+      "/prop-21/721248666_959231113607684_1573968744250484706_n.jpg",
+      "/prop-21/721310544_959231550274307_404024353819537727_n.jpg",
+      "/prop-21/721349029_959232136940915_3761587530624903698_n.jpg",
+      "/prop-21/721387719_959231466940982_4217076583590590769_n.jpg",
+      "/prop-21/721387732_959232226940906_6149326636159541808_n.jpg",
+      "/prop-21/721403701_959232406940888_6638579122559782073_n.jpg",
+      "/prop-21/721415705_959231186941010_4862316765136679750_n.jpg",
+      "/prop-21/721464276_959231270274335_527997011663115297_n.jpg",
+      "/prop-21/721466849_959232576940871_8473811890499139355_n.jpg",
+      "/prop-21/721626041_959231613607634_456279130143287507_n.jpg",
+      "/prop-21/721880684_959232803607515_2966308777763684423_n.jpg"
     ]
   }
 ];
