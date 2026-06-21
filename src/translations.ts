@@ -365,6 +365,12 @@ export const translations = {
           title: "Hotel Ready for Operation in Ammoudia",
           location: "Ammoudia, Municipality of Parga",
           description: "Hotel for sale ready for operation in Ammoudia, Municipality of Parga. On a 520 sq.m plot. Consists of 15 rooms (twin and triple) and 2 apartments. 500 meters from the sea. Reception, parking area, easy access. Only needs exterior painting. Immediately available. Information at Epirus Real Estate web www.epirusestate.com or WhatsApp 694 486 6469"
+        },
+        {
+          id: 32,
+          title: "Unique Property 1,000 sq.m in Valtos, Parga",
+          location: "Valtos, Parga",
+          description: "In Valtos, Parga, a unique property of 1,000 sq.m is for sale with a building coefficient of 0.50. The property also has a valid permit for 17 apartments. 200 meters from the sea. Price €300,000 and immediately available. Information at Epirus Real Estate. WhatsApp 694 486 6469"
         }
       ]
     },
@@ -735,6 +741,12 @@ export const translations = {
         title: "Ξενοδοχείο έτοιμο προς εκμετάλλευση στην Αμμουδιά",
         location: "Αμμουδιά, Δήμος Πάργας",
         description: "Πωλείται Ξενοδοχείο έτοιμο προς εκμετάλλευση Στην Αμμουδιά του Δημου Παργας Σε οικόπεδο 520τ.μ Αποτελείται απο 15 Δωμάτια 2 κλινα και 3 κλινα και 2 διαμερισματα Απόσταση απο την θάλασσα 500 μετρα reception, χώρος parking εύκολη πρόσβαση, χρήζει μονο εξωτερικής βαφής Άμεσα διαθέσιμο...!!! Πληροφορίες στο Epirus real estate web www epirusestate. Wats app 694 486 6469"
+      },
+      {
+        id: 32,
+        title: "Μοναδικό Ακίνητο 1,000τ.μ στο Βάλτο Πάργας",
+        location: "Βάλτος, Πάργας",
+        description: "Στο  Βάλτο Πάργας Πωλείτε Μοναδικό Ακίνητο 1,000τ.μ με Συντελεστή δόμησης (0,50) Στο Ακίνητο υπάρχει και Αδεια σε ισχύ για 17 διαμερισματα.Αποσταση απο την θάλασσα 200 μετρα τιμη 300,000 € Και Άμεσα διαθέσιμο πληροφορίες στο Epirus real estate Wats app 694 486 6469"
       }
     ]
   }
@@ -1540,6 +1552,24 @@ export const BASE_PROPERTIES = [
       "/prop-21/721466849_959232576940871_8473811890499139355_n.jpg",
       "/prop-21/721626041_959231613607634_456279130143287507_n.jpg",
       "/prop-21/721880684_959232803607515_2966308777763684423_n.jpg"
+    ]
+  },
+  {
+    id: 32,
+    price: "€300,000",
+    beds: "-",
+    baths: "-",
+    sqm: "1,000",
+    image: "/prop-24/721667317_27632456689713647_3025028148926775519_n.jpg",
+    images: [
+      "/prop-24/721667317_27632456689713647_3025028148926775519_n.jpg",
+      "/prop-24/722037735_27632455399713776_441898603963627033_n.jpg",
+      "/prop-24/723779573_27632456056380377_141332791519297790_n.jpg",
+      "/prop-24/724239553_27632457223046927_4095505745711110487_n.jpg",
+      "/prop-24/724243025_27632454239713892_5646232554447620769_n (1).jpg",
+      "/prop-24/724243025_27632454239713892_5646232554447620769_n.jpg",
+      "/prop-24/724340293_27632454786380504_7796942702433329194_n.jpg",
+      "/prop-24/724648017_27632457929713523_6614105018774932484_n.jpg"
     ]
   }
 ];
