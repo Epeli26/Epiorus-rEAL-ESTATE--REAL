@@ -383,6 +383,12 @@ export const translations = {
           title: "Property 800 sq.m in the Center of Kanallaki",
           location: "Kanallaki, Municipality of Parga",
           description: "In the center of Kanallaki, Municipality of Parga, a property of 800 sq.m is for sale. Suitable for offices, medical clinics, and all kinds of stores. A total of 14 independent units of 50 sq.m each. Suitable for a hotel or apartments. Easy access with an elevator, 3 floors. Information at Epirus Real Estate."
+        },
+        {
+          id: 34,
+          title: "Amphitheatrical Plot 4,200 sq.m in Agia Kyriaki",
+          location: "Agia Kyriaki, Parga",
+          description: "Plot for sale in Agia Kyriaki, Parga, just minutes from beautiful Parga and before Lichnos. Unobstructed view of the Ionian Sea. Immediate access. Amphitheatrical, 4,200 sq.m with a building capacity of 200 sq.m. Price €85,000. Immediately available."
         }
       ]
     },
@@ -772,6 +778,12 @@ export const translations = {
         title: "Ακίνητο 800τ.μ στο Κέντρο του Καναλακίου",
         location: "Καναλλάκι, Δήμος Πάργας",
         description: "Στο κέντρο του Καναλακίου του Δημου Παργας πωλείται Ακίνητο συνολικού εμβαδού 800τ.μ κατάλληλο για Γραφεία,Ιατρεία,και πάσης φύσεως καταστήματα Συνολικά 14 Ανεξάρτητα Των 50 τ.μ έκαστος Καταλληλο για ξενοδοχείο η Διαμερίσματα εύκολη πρόσβαση με Ασανσέρ 3 όροφο.Πληροφορίες στο"
+      },
+      {
+        id: 34,
+        title: "Αμφιθεατρικό Οικόπεδο 4,200τ.μ στην Αγία Κυριακή",
+        location: "Αγία Κυριακή, Πάργα",
+        description: "Πωλείται οικόπεδο Στην Αγία Κυριακή Παργας μολις λίγα λεπτα απο την όμορφη Παργα και πριν το Λύχνος Ανεμπόδιστη θεα το Ιόνιο πέλαγος.Άμεση πρόσβαση Αμφιθεατρικό 4,200τ.μ με Δόμηση 200τ.μ τιμη 85,000€ Άμεσα διαθέσιμο"
       }
     ]
   }
@@ -1651,6 +1663,24 @@ export const BASE_PROPERTIES = [
       "/prop-26/730109696_970365545827574_6829258313108817010_n.jpg",
       "/prop-26/730244972_970366752494120_421902102541358206_n.jpg",
       "/prop-26/730313465_970365822494213_98665000225461800_n.jpg"
+    ]
+  },
+  {
+    id: 34,
+    price: "€85,000",
+    beds: "-",
+    baths: "-",
+    sqm: "4,200",
+    image: "/prop-27/731855208_975097772021018_93097378550866313_n.jpg",
+    images: [
+      "/prop-27/731855208_975097772021018_93097378550866313_n.jpg",
+      "/prop-27/732092165_974927348704727_3059007127335076600_n (1).jpg",
+      "/prop-27/732092165_974927348704727_3059007127335076600_n.jpg",
+      "/prop-27/732152076_974927555371373_5606930735819238579_n.jpg",
+      "/prop-27/733542653_974927398704722_8312901918933594300_n (1).jpg",
+      "/prop-27/733542653_974927398704722_8312901918933594300_n.jpg",
+      "/prop-27/733963973_974927475371381_301751316930796984_n.jpg",
+      "/prop-27/734039380_974927675371361_6834196816884803833_n.jpg"
     ]
   }
 ];
