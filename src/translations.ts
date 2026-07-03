@@ -389,6 +389,12 @@ export const translations = {
           title: "Amphitheatrical Plot 4,200 sq.m in Agia Kyriaki",
           location: "Agia Kyriaki, Parga",
           description: "Plot for sale in Agia Kyriaki, Parga, just minutes from beautiful Parga and before Lichnos. Unobstructed view of the Ionian Sea. Immediate access. Amphitheatrical, 4,200 sq.m with a building capacity of 200 sq.m. Price €85,000. Immediately available."
+        },
+        {
+          id: 35,
+          title: "House 120 sq.m for Rent in Narkissos",
+          location: "Narkissos, Municipality of Parga",
+          description: "House for rent in a quiet environment for long-term rental in the municipal district of Narkissos, Municipality of Parga. 2 bedrooms, living room, kitchen, 120 sq.m. Internet, parking, furnished. 7 minutes from the sea, 2 minutes from Kanallaki. Information at WhatsApp 694 486 6469."
         }
       ]
     },
@@ -784,6 +790,12 @@ export const translations = {
         title: "Αμφιθεατρικό Οικόπεδο 4,200τ.μ στην Αγία Κυριακή",
         location: "Αγία Κυριακή, Πάργα",
         description: "Πωλείται οικόπεδο Στην Αγία Κυριακή Παργας μολις λίγα λεπτα απο την όμορφη Παργα και πριν το Λύχνος Ανεμπόδιστη θεα το Ιόνιο πέλαγος.Άμεση πρόσβαση Αμφιθεατρικό 4,200τ.μ με Δόμηση 200τ.μ τιμη 85,000€ Άμεσα διαθέσιμο"
+      },
+      {
+        id: 35,
+        title: "Μονοκατοικία 120τ.μ προς Ενοικίαση στον Νάρκισσο",
+        location: "Νάρκισσος, Δήμος Πάργας",
+        description: "Ενοικιάζεται Μονοκατοικία Σε ήσυχο περιβάλλον για Μακροχρόνια ενοικίαση Στο Δημοτικό διαμέρισμα Νάρκισσος Δήμου Πάργας..2 υπνοδωμάτια καθιστικό κουζίνα 120τ.μ ίντερνετ,πάρκινγκ,επιπλωμένο απόσταση απο θάλασσα 7 λεπτα απόσταση απο το Καναλακι 2 λεπτα...πληροφορίες What's app 694 486 6469"
       }
     ]
   }
@@ -1681,6 +1693,32 @@ export const BASE_PROPERTIES = [
       "/prop-27/733542653_974927398704722_8312901918933594300_n.jpg",
       "/prop-27/733963973_974927475371381_301751316930796984_n.jpg",
       "/prop-27/734039380_974927675371361_6834196816884803833_n.jpg"
+    ]
+  },
+  {
+    id: 35,
+    price: "Κατόπιν Επικοινωνίας",
+    beds: "2",
+    baths: "1",
+    sqm: "120",
+    image: "/prop-28/734088708_977828648414597_8173125491763352427_n.jpg",
+    images: [
+      "/prop-28/734088708_977828648414597_8173125491763352427_n.jpg",
+      "/prop-28/734178469_977828731747922_5891285257009865356_n.jpg",
+      "/prop-28/734623054_977829391747856_8593796124146668912_n.jpg",
+      "/prop-28/734644858_977829218414540_5115896833423028561_n.jpg",
+      "/prop-28/734768118_977828985081230_95756803304196486_n.jpg",
+      "/prop-28/734896827_977828578414604_6452284003850716509_n (1).jpg",
+      "/prop-28/734896827_977828578414604_6452284003850716509_n.jpg",
+      "/prop-28/735810429_977829475081181_537051758410102388_n.jpg",
+      "/prop-28/735909006_977828508414611_933534742740731723_n (1).jpg",
+      "/prop-28/735909006_977828508414611_933534742740731723_n.jpg",
+      "/prop-28/735994094_977829321747863_502751699911920928_n.jpg",
+      "/prop-28/736715325_977829261747869_5978534053776423329_n.jpg",
+      "/prop-28/737026570_977828428414619_3632439385783846446_n.jpg",
+      "/prop-28/737027077_977829068414555_6920899632996927540_n.jpg",
+      "/prop-28/737412802_977828818414580_5583565767202450358_n.jpg",
+      "/prop-28/738759074_977828891747906_3327940163422080324_n.jpg"
     ]
   }
 ];
