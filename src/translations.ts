@@ -289,15 +289,15 @@ export const translations = {
       },
       {
         id: 18,
-        title: "Fully Renovated Apartment in Kolonaki",
-        location: "Kolonaki",
-        description: "Apartment description in Kolonaki. 135sqm on the 5th floor, 1 bedroom, 2 bathrooms. Features: Living room, dining room, kitchen, Air conditioning, Solar water heater, Fireplace, Autonomous heating, Fully renovated. Sale price €900,000."
+        title: "Plot 1,130 sq.m in Tsouknida",
+        location: "Tsouknida, Municipality of Parga",
+        description: "Plot for sale 1,130 sq.m. in the Municipal District of Tsouknida, Municipality of Parga. The plot is located within the settlement and is even and buildable, clean with 40 olive trees. Direct access as it has a road frontage, easy access and a quiet environment, just 5 minutes from the beaches of Loutsa, Vrachos, and Alonaki Skala Kerentza. Suitable for professional or personal use. Price €100,000."
       },
       {
         id: 19,
-        title: "Exclusive Party Residence in Mykonos",
-        location: "Mykonos",
-        description: "Property Features: Estate area: 5500 sq.m. Building: 480 sq.m. Spectacular view towards the islands of Naxos, Paros and Delos. Nearby beaches: Agrari, Elia, Super Paradise. Tornado: Not affected by north winds. Party Residence: First floor: Kitchen, living room, guest toilet. Main bedroom with outdoor courtyards, pool and church. Second floor: Three bedrooms with private bathrooms. Lounge, bar and covered balcony for unforgettable moments of relaxation. Third floor: Two independent suites with living rooms, kitchens and bathrooms, offering absolute privacy. This residence is not just a house, but a world where luxury meets authentic Mykonian hospitality. It is a place where the beauty of nature combines with architectural elegance, creating a dreamy and unforgettable space."
+        title: "Plot 2,800 sq.m in Ammoudia",
+        location: "Ammoudia, Municipality of Parga",
+        description: "Plot for sale in front of the Acheron River in the Municipal District of Ammoudia, Municipality of Parga. Next to the new bridge connecting to Kerentza, Alonaki, and Skala beaches. Suitable for professional use, 2,800 sq.m. with a 26-meter frontage on the road network. Price €200,000."
       },
       {
         id: 20,
@@ -340,9 +340,46 @@ export const translations = {
           title: "Plot 500 sq.m in Mesopotamos",
           location: "Mesopotamos, Municipality of Parga",
           description: "Plot for sale in Mesopotamos, Municipality of Parga, 500 sq.m. Even and buildable, within the settlement with a building coefficient of 0.40, corner plot. Electricity and water within the plot, fenced, with frontage on 2 roads. Next to a bakery, school, EKAB (first aid), supermarket, cafe, restaurant. Just 3 minutes from Ammoudia beach and 15 minutes from Parga. Price €60,000. Exclusively at Epirus Real Estate."
+        },
+        {
+          id: 27,
+          title: "Buildable Plot 1,200 sq.m in Kanallaki",
+          location: "Kanallaki, Municipality of Parga",
+          description: "Plot for sale in Kanallaki, Municipality of Parga, even and buildable, 1,200 sq.m with a building coefficient of 0.80 and a 40-meter frontage on a road. Located in a quiet area, suitable for professional or private use. Subdivision is also possible. Flat, clean, and with several olive trees. Price €125,000."
+        },
+        {
+          id: 28,
+          title: "Amphitheatrical Plot 835 sq.m in Mesopotamos",
+          location: "Mesopotamos, Municipality of Parga",
+          description: "Plot for sale in Mesopotamos, Municipality of Parga. Even and buildable, 835 sq.m, amphitheatrical, clean, in a beautiful and quiet location. Unobstructed view with 2 entrances (upper and lower). Minutes from the beaches of Ammoudia, Loutsa, Vrachos, Alonaki, Skala, and 20 minutes from beautiful Parga. In Mesopotamos there is the unique Necromanteion, restaurants, cafes, pharmacy, bakery, EKAB (first aid), operating 12 months a year. Within the city plan with a building capacity of 350 sq.m. Immediately available at Epirus Real Estate. Price upon request."
+        },
+        {
+          id: 29,
+          title: "Unique Land Plot in Valtos, Parga",
+          location: "Valtos, Parga",
+          price: "POA",
+          description: "For sale, a unique land plot in Valtos, Parga, with a total area of 1,100 sq.m. It is even and buildable with a 50% building factor, suitable for private and commercial investment. The plot is adjacent to the road, offering very easy access."
+        },
+        {
+          id: 30,
+          title: "Unique Property in Parga with Unobstructed View",
+          location: "Parga, Epirus",
+          description: "A unique property in beautiful Parga with unparalleled and unobstructed views. On a 3,500 sq.m plot with building capacity of up to 240 sq.m, sold at the price of €280,000. Contact / WhatsApp: 694 486 6469"
+        },
+        {
+          id: 31,
+          title: "Hotel Ready for Operation in Ammoudia",
+          location: "Ammoudia, Municipality of Parga",
+          description: "Hotel for sale ready for operation in Ammoudia, Municipality of Parga. On a 520 sq.m plot. Consists of 15 rooms (twin and triple) and 2 apartments. 500 meters from the sea. Reception, parking area, easy access. Only needs exterior painting. Immediately available. Information at Epirus Real Estate web www.epirusestate.com or WhatsApp 694 486 6469"
+        },
+        {
+          id: 32,
+          title: "Unique Property 1,000 sq.m in Valtos, Parga",
+          location: "Valtos, Parga",
+          description: "In Valtos, Parga, a unique property of 1,000 sq.m is for sale with a building coefficient of 0.50. The property also has a valid permit for 17 apartments. 200 meters from the sea. Price €300,000 and immediately available. Information at Epirus Real Estate. WhatsApp 694 486 6469"
         }
       ]
-  },
+    },
 
   el: {
     nav: {
@@ -634,15 +671,15 @@ export const translations = {
       },
       {
         id: 18,
-        title: "Πλήρως ανακαινισμένο Διαμέρισμα στο Κολωνάκι",
-        location: "Κολωνάκι",
-        description: "Περιγραφή του διαμερίσματος στο Κολωνάκι. 135τμ στον 5ο όροφο, 1 υπνοδωμάτιο, 2 μπάνια. Σαλόνι, τραπεζαρία, κουζίνα. Κλιματισμό, Ηλιακό θερμοσίφωνα, Τζάκι, Αυτόνομη θέρμανση, Πλήρως ανακαινισμένο. Τιμή πώλησης 900.000€."
+        title: "Οικόπεδο 1,130τ.μ στην Τσουκνίδα",
+        location: "Τσουκνίδα, Δήμος Πάργας",
+        description: "Πωλείται οικόπεδο 1,130τ.μ Στο Δ.δ Τσουκνιδας του Δημου Παργας Το οικόπεδο βρίσκεται εντός οικισμόυ και ειναι Άρτιο και οικοδομήσιμο καθαρό με 40 ελαιόδεντρα Αμεση πρόσβαση λογο του οτι  διέρχεται με πρόσοψη δρόμος εύκολη πρόσβαση και ήσυχο  περιβάλλον μολις 5 λεπτα απο της παραλίες Λουτσα βράχος και Αλωνακι σκαλα κερετζα..κατάλληλο για επαγγελματική η προσωπική χρήση τιμη 100,000 €"
       },
       {
         id: 19,
-        title: "Αποκλειστική Κατοικία Εκδηλώσεων στην Μύκονο",
-        location: "Μύκονος",
-        description: "Χαρακτηριστικά Ακινήτου: Εμβαδόν κτήματος: 5500 τ.μ. Κτίριο: 480 τ.μ. Εκπληκτική θέα προς τα νησιά Νάξο, Πάρο και Δήλο. Κοντινές παραλίες: Αγράρι, Ελιά, Super Paradise. Προστατευμένο από τους βόρειους ανέμους. Κατοικία Εκδηλώσεων: Πρώτος όροφος: Κουζίνα, σαλόνι, WC επισκεπτών. Κύριο υπνοδωμάτιο με εξωτερικές αυλές, πισίνα και εκκλησάκι. Δεύτερος όροφος: Τρία υπνοδωμάτια με ιδιωτικά μπάνια. Σαλόνι, μπαρ και σκεπαστό μπαλκόνι. Τρίτος όροφος: Δύο ανεξάρτητες σουίτες με σαλόνια, κουζίνες και μπάνια. Αυτή η κατοικία δεν είναι απλώς ένα σπίτι, αλλά ένας κόσμος όπου η πολυτέλεια συναντά την αυθεντική μυκονιάτικη φιλοξενία."
+        title: "Τεμάχιο 2,800τ.μ στην Αμμουδιά",
+        location: "Αμμουδιά, Δήμος Πάργας",
+        description: "Πωλείται Τεμάχιο μπροστά στον Αχέροντα Στο Δημοτικό διαμέρισμα Αμμουδιας του Δημου Παργας  διπλα του η νεα γεφυρα ένωσης με ρης παραλιες Κερετζα Αλωνακι σκαλα κατάλληλο για επαγγελματική χρήση 2,800τ.μ με πρόσοψη 26 μετρα σε οδικό δίκτυο τιμη 200,000€"
       },
       {
         id: 20,
@@ -685,6 +722,43 @@ export const translations = {
         title: "Οικόπεδο 500τ.μ στον Μεσοπόταμο",
         location: "Μεσοπόταμος, Δήμος Πάργας",
         description: "Πωλείται Στο Μεσοποταμο Δήμος Παργας οικόπεδο 500τ.μ Άρτιο οικοδομήσιμο εντος οικισμόυ με συντελεστή δόμησης 0,40 γωνιακό.Ρευμα νερο εντός οικόπεδου περιφραγμενο και προσώπο σε 2 δρόμους Δίπλα του φούρνος,σχολείο, ΕΚΑΒ,super market,καφε,εστιατόριο,μόλις 3 λεπτα απο την Παραλία Αμμουδιας και 15 απο Παργα..τιμη 60,000 € Αποκλειστικά στο epirus real estate"
+      },
+      {
+        id: 27,
+        title: "Οικόπεδο 1,200τ.μ στο Καναλλάκι",
+        location: "Καναλλάκι, Δήμος Πάργας",
+        description: "Πωλείται Στο καναλλακι του Δήμου Πάργας οικόπεδο άρτιο οικοδομήσιμο 1,200τ.μ με συντελεστή δόμησης 0,80 με προσώπο σε δρόμο 40 μετρα σε ήσυχη τοποθεσία κατάλληλο για επαγγελματική χρήση η ιδιωτική μπορεί να γίνει και κατάτμηση...Επίπεδο καθαρό και με αρκετά ελαιόδεντρα τιμη 125,000€"
+      },
+      {
+        id: 28,
+        title: "Αμφιθεατρικό Οικόπεδο 835τ.μ στον Μεσοπόταμο",
+        location: "Μεσοπόταμος, Δήμος Πάργας",
+        description: "Οικόπεδο προς πώληση Στο Μεσοποταμο του δημου παργας Άρτιο και οικοδομήσιμο 835 τ.μ αμφιθεατρικό καθαρό σε όμορφη και ήσυχη τοποθεσία Ανεμποδιστο με 2 εισόδους πανω και κάτω του οικοπέδου σε λίγα λεπτα απο της Παραλίες Αμμουδιας,λουτσας,βράχου, Αλωνακι,σκαλα,και 20 λεπτα απο την όμορφη παργα..Στο Μεσοποταμο υπάρχει το μοναδικό Νεκρομαντειο, καταστήματα εστίασης, καφε φαρμακείο,φουρνος,ΕΚΑΒ,και λειτουργούν 12 μήνες οικόπεδο σε Σχεδιο πόλεως με δόμηση 350τ.μ Άμεσα διαθέσιμο στο Epirus real estate"
+      },
+      {
+        id: 29,
+        title: "Μοναδικό οικόπεδο στο Βάλτο Πάργας",
+        location: "Βάλτος, Πάργα",
+        price: "Κατόπιν επικοινωνίας",
+        description: "Πωλείται μοναδικό οικόπεδο στο Βάλτο Πάργας εμβαδού 1,100 τ.μ. Είναι άρτιο και οικοδομήσιμο με συντελεστή δόμησης 50%, κατάλληλο για ιδιωτική και επαγγελματική επένδυση. Το οικόπεδο εφάπτεται επί της οδού με εύκολη πρόσβαση."
+      },
+      {
+        id: 30,
+        title: "Μοναδικό Ακίνητο στην Πάργα με Ανεμπόδιστη Θέα",
+        location: "Πάργα, Ήπειρος",
+        description: "Ένα Μοναδικό Ακίνητο Στην όμορφη Πάργα με απαράμιλλη και Ανεμπόδιστη θέα. Σε οικόπεδο 3,500τ.μ με δόμηση έως 240τ.μ πωλείται στην τιμή των 280.000 €. Επικοινωνία / WhatsApp: 694 486 6469"
+      },
+      {
+        id: 31,
+        title: "Ξενοδοχείο έτοιμο προς εκμετάλλευση στην Αμμουδιά",
+        location: "Αμμουδιά, Δήμος Πάργας",
+        description: "Πωλείται Ξενοδοχείο έτοιμο προς εκμετάλλευση Στην Αμμουδιά του Δημου Παργας Σε οικόπεδο 520τ.μ Αποτελείται απο 15 Δωμάτια 2 κλινα και 3 κλινα και 2 διαμερισματα Απόσταση απο την θάλασσα 500 μετρα reception, χώρος parking εύκολη πρόσβαση, χρήζει μονο εξωτερικής βαφής Άμεσα διαθέσιμο...!!! Πληροφορίες στο Epirus real estate web www epirusestate. Wats app 694 486 6469"
+      },
+      {
+        id: 32,
+        title: "Μοναδικό Ακίνητο 1,000τ.μ στο Βάλτο Πάργας",
+        location: "Βάλτος, Πάργας",
+        description: "Στο  Βάλτο Πάργας Πωλείτε Μοναδικό Ακίνητο 1,000τ.μ με Συντελεστή δόμησης (0,50) Στο Ακίνητο υπάρχει και Αδεια σε ισχύ για 17 διαμερισματα.Αποσταση απο την θάλασσα 200 μετρα τιμη 300,000 € Και Άμεσα διαθέσιμο πληροφορίες στο Epirus real estate Wats app 694 486 6469"
       }
     ]
   }
@@ -1166,44 +1240,49 @@ export const BASE_PROPERTIES = [
   },
   {
     id: 18,
-    price: "€900,000",
-    beds: 1,
-    baths: 2,
-    sqm: 135,
-    image: "/prop-13/11debdd1-3628-42ac-8237-e78f43f558dc.jpg",
+    price: "€100,000",
+    beds: "-",
+    baths: "-",
+    sqm: "1130",
+    image: "/prop-18/706982312_27348147584811227_2951056327653319802_n.jpg",
     images: [
-      "/prop-13/11debdd1-3628-42ac-8237-e78f43f558dc.jpg",
-      "/prop-13/2ab65558-6bcc-4f17-bb03-afeba7e531b7.jpg",
-      "/prop-13/472d7f90-49aa-4b83-b2b4-87dc710d8227.jpg",
-      "/prop-13/4f5acc81-fa69-4832-ae02-387453db4ee3.jpg",
-      "/prop-13/7ee8245e-b30d-4c6f-97cd-e0699325ca18.jpg",
-      "/prop-13/88319c4a-ca36-4878-b75a-af119ba753ee.jpg",
-      "/prop-13/afd4ac1a-83b4-4683-87a3-b729fa485359.jpg",
-      "/prop-13/d8a733fe-b03f-4551-9f33-5a12944c05ee.jpg",
-      "/prop-13/f788fb59-b3a6-47e3-87e7-e3053b99563b.jpg"
+      "/prop-18/706982312_27348147584811227_2951056327653319802_n.jpg",
+      "/prop-18/704703576_27348172814808704_5380940173926210411_n.jpg",
+      "/prop-18/704763873_27348149404811045_9113504354462273661_n.jpg",
+      "/prop-18/706123244_27348158301476822_5654877287722567287_n.jpg",
+      "/prop-18/706219507_27348157648143554_809091603086622301_n.jpg",
+      "/prop-18/706711470_27348154311477221_7312427354447860913_n.jpg",
+      "/prop-18/706734424_27348171691475483_9222985711031440590_n.jpg",
+      "/prop-18/706971825_27348173674808618_6434885844009905432_n.jpg",
+      "/prop-18/707340361_27348173188142000_5584938500452382714_n.jpg",
+      "/prop-18/707434611_27348155231477129_1411124913275644835_n.jpg",
+      "/prop-18/707510427_27348156908143628_7638425542862074264_n.jpg",
+      "/prop-18/707601367_27348173404808645_5789375938111784118_n.jpg",
+      "/prop-18/707602391_27348152954810690_1953126499621441896_n.jpg",
+      "/prop-18/707875927_27348151154810870_1555245063233949124_n.jpg",
+      "/prop-18/707914989_27348170588142260_7627346494566439366_n.jpg",
+      "/prop-18/708223395_27348156191477033_7463630436980762778_n.jpg"
     ]
   },
   {
     id: 19,
-    price: "€5,000,000",
-    beds: 6,
-    baths: 6,
-    sqm: 480,
-    image: "/prop-14/WhatsApp Image 2026-04-06 at 15.57.49 (3).jpeg",
+    price: "€200,000",
+    beds: "-",
+    baths: "-",
+    sqm: "2800",
+    image: "/prop-19/707828016_27384215194537799_5641663451890429667_n.jpg",
     images: [
-      "/prop-14/WhatsApp Image 2026-04-06 at 15.57.49 (3).jpeg",
-      "/prop-14/WhatsApp Image 2026-04-06 at 15.57.40 (1).jpeg",
-      "/prop-14/WhatsApp Image 2026-04-06 at 15.57.40 (2).jpeg",
-      "/prop-14/WhatsApp Image 2026-04-06 at 15.57.40.jpeg",
-      "/prop-14/WhatsApp Image 2026-04-06 at 15.57.41 (1).jpeg",
-      "/prop-14/WhatsApp Image 2026-04-06 at 15.57.41 (2).jpeg",
-      "/prop-14/WhatsApp Image 2026-04-06 at 15.57.41 (3).jpeg",
-      "/prop-14/WhatsApp Image 2026-04-06 at 15.57.41 (4).jpeg",
-      "/prop-14/WhatsApp Image 2026-04-06 at 15.57.41.jpeg",
-      "/prop-14/WhatsApp Image 2026-04-06 at 15.57.42 (1).jpeg",
-      "/prop-14/WhatsApp Image 2026-04-06 at 15.57.42 (2).jpeg",
-      "/prop-14/WhatsApp Image 2026-04-06 at 15.57.42 (3).jpeg",
-      "/prop-14/WhatsApp Image 2026-04-06 at 15.57.42 (4).jpeg"
+      "/prop-19/707828016_27384215194537799_5641663451890429667_n.jpg",
+      "/prop-19/708179701_27384214084537910_6020414352939347822_n.jpg",
+      "/prop-19/708179703_27384234247869227_5517259661927292726_n.jpg",
+      "/prop-19/708242704_27384219817870670_6501696819521801862_n.jpg",
+      "/prop-19/708243806_27384221567870495_8423962817476837095_n.jpg",
+      "/prop-19/708261076_27384217674537551_3635757562912835419_n.jpg",
+      "/prop-19/708300596_27384218747870777_1848360555935002609_n.jpg",
+      "/prop-19/708312929_27384222701203715_5578061576020790750_n.jpg",
+      "/prop-19/709709526_27384214547871197_4929694176851376165_n.jpg",
+      "/prop-19/709737348_27384216864537632_6879200852081930556_n.jpg",
+      "/prop-19/710710612_27384216067871045_1275054030879987876_n.jpg"
     ]
   },
   {
@@ -1395,6 +1474,137 @@ export const BASE_PROPERTIES = [
       "/prop-17/703200864_940527768811352_6818045794163585992_n.jpg",
       "/prop-17/703503716_940527898811339_6066809323745873869_n.jpg",
       "/prop-17/703572143_940527985477997_3795184076495022060_n.jpg"
+    ]
+  },
+  {
+    id: 27,
+    price: "€125,000",
+    beds: "-",
+    baths: "-",
+    sqm: "1,200",
+    image: "/prop-20/707838713_949264341271028_862689535898278532_n.jpg",
+    images: [
+      "/prop-20/707838713_949264341271028_862689535898278532_n.jpg",
+      "/prop-20/708211027_949264407937688_3680650410648929694_n.jpg",
+      "/prop-20/708289786_949265054604290_7152768891708564065_n.jpg",
+      "/prop-20/708333743_949264197937709_4759542980113486695_n (1).jpg",
+      "/prop-20/708333743_949264197937709_4759542980113486695_n.jpg",
+      "/prop-20/708345362_949264471271015_3349584486731398547_n.jpg",
+      "/prop-20/708345370_949264621271000_774903353020613338_n.jpg",
+      "/prop-20/709101609_949265017937627_451200239253275420_n.jpg",
+      "/prop-20/709101661_949264951270967_8952046774850782681_n.jpg",
+      "/prop-20/709155650_949265107937618_5006725848505014096_n.jpg",
+      "/prop-20/709821641_949264547937674_1435109042433683804_n.jpg",
+      "/prop-20/710613597_949264274604368_3349374204039133640_n.jpg",
+      "/prop-20/710710612_949264851270977_1028821537587193494_n.jpg",
+      "/prop-20/710890283_949264701270992_2659961880580467681_n.jpg",
+      "/prop-20/711618864_949264771270985_2820633996141160113_n.jpg"
+    ]
+  },
+  {
+    id: 28,
+    price: "Κατόπιν Επικοινωνίας",
+    beds: "-",
+    baths: "-",
+    sqm: "835",
+    image: "/prop-25/726321630_970296419167820_7646031258403386726_n.jpg",
+    images: [
+      "/prop-25/726321630_970296419167820_7646031258403386726_n.jpg",
+      "/prop-25/727465404_970296059167856_3286044005836606924_n.jpg",
+      "/prop-25/727497591_970295439167918_5122597979654388287_n.jpg",
+      "/prop-25/727543330_970295915834537_1014642602395209598_n.jpg",
+      "/prop-25/727572529_970295719167890_3564198334301098653_n.jpg",
+      "/prop-25/727847483_970296479167814_5018265372601707459_n.jpg",
+      "/prop-25/727904312_970296205834508_1769394754521787534_n.jpg",
+      "/prop-25/728213162_970295545834574_6362246885361375043_n.jpg",
+      "/prop-25/728427128_970295815834547_2134020580776733534_n.jpg",
+      "/prop-25/729179513_970296372501158_3147321104377631705_n.jpg",
+      "/prop-25/729375675_970295662501229_926543002873379301_n.jpg",
+      "/prop-25/729413353_970296105834518_5957578101220841764_n.jpg",
+      "/prop-25/729769119_970295995834529_7293422341694215756_n.jpg"
+    ]
+  },
+  {
+    id: 29,
+    price: "POA",
+    beds: "-",
+    baths: "-",
+    sqm: "1,100",
+    image: "/prop-22/724087146_961737870023675_6047069163655358275_n.jpg",
+    images: [
+      "/prop-22/724087146_961737870023675_6047069163655358275_n.jpg",
+      "/prop-22/721209279_961737800023682_3291988414179636101_n.jpg",
+      "/prop-22/722268341_961738003356995_5593320278695042617_n.jpg",
+      "/prop-22/723600220_961737923357003_9011754904811358238_n.jpg",
+      "/prop-22/724047007_961737963356999_2846353541055571645_n.jpg",
+      "/prop-22/724052449_961737840023678_5641662157253699322_n.jpg"
+    ]
+  },
+  {
+    id: 30,
+    price: "€280,000",
+    beds: "-",
+    baths: "-",
+    sqm: "3,500",
+    image: "/prop-23/721779289_27625802853712364_5790674503337974798_n.jpg",
+    images: [
+      "/prop-23/721779289_27625802853712364_5790674503337974798_n.jpg",
+      "/prop-23/721880699_27625806520378664_4486935602513006942_n.jpg",
+      "/prop-23/722147721_27625803797045603_8242923375315173157_n.jpg",
+      "/prop-23/722563670_27625802163712433_6582826102782779632_n.jpg",
+      "/prop-23/723844342_27625806137045369_7866915054132917121_n.jpg",
+      "/prop-23/724105181_27625804447045538_7667878250616863143_n.jpg",
+      "/prop-23/724257221_27625801313712518_5254506190669875404_n.jpg",
+      "/prop-23/724328943_27625806740378642_4781625320645707794_n.jpg",
+      "/prop-23/724350751_27625808993711750_3981887848164976638_n.jpg",
+      "/prop-23/724541152_27625805370378779_3030065749148677781_n.jpg"
+    ]
+  },
+  {
+    id: 31,
+    price: "POA",
+    beds: "-",
+    baths: "-",
+    sqm: "520",
+    image: "/prop-21/720408297_959231790274283_5542458433368530343_n.jpg",
+    images: [
+      "/prop-21/720408297_959231790274283_5542458433368530343_n.jpg",
+      "/prop-21/720675987_959231710274291_2174222902506382565_n.jpg",
+      "/prop-21/720784732_959232666940862_7454329285561575354_n.jpg",
+      "/prop-21/720814527_959232743607521_5024454347324286327_n.jpg",
+      "/prop-21/720988492_959231403607655_2771012081404612473_n.jpg",
+      "/prop-21/721035725_959232363607559_6910290776799204711_n.jpg",
+      "/prop-21/721035727_959232306940898_4955534252002318078_n.jpg",
+      "/prop-21/721051711_959231343607661_7123481060854245874_n.jpg",
+      "/prop-21/721248666_959231113607684_1573968744250484706_n.jpg",
+      "/prop-21/721310544_959231550274307_404024353819537727_n.jpg",
+      "/prop-21/721349029_959232136940915_3761587530624903698_n.jpg",
+      "/prop-21/721387719_959231466940982_4217076583590590769_n.jpg",
+      "/prop-21/721387732_959232226940906_6149326636159541808_n.jpg",
+      "/prop-21/721403701_959232406940888_6638579122559782073_n.jpg",
+      "/prop-21/721415705_959231186941010_4862316765136679750_n.jpg",
+      "/prop-21/721464276_959231270274335_527997011663115297_n.jpg",
+      "/prop-21/721466849_959232576940871_8473811890499139355_n.jpg",
+      "/prop-21/721626041_959231613607634_456279130143287507_n.jpg",
+      "/prop-21/721880684_959232803607515_2966308777763684423_n.jpg"
+    ]
+  },
+  {
+    id: 32,
+    price: "€300,000",
+    beds: "-",
+    baths: "-",
+    sqm: "1,000",
+    image: "/prop-24/721667317_27632456689713647_3025028148926775519_n.jpg",
+    images: [
+      "/prop-24/721667317_27632456689713647_3025028148926775519_n.jpg",
+      "/prop-24/722037735_27632455399713776_441898603963627033_n.jpg",
+      "/prop-24/723779573_27632456056380377_141332791519297790_n.jpg",
+      "/prop-24/724239553_27632457223046927_4095505745711110487_n.jpg",
+      "/prop-24/724243025_27632454239713892_5646232554447620769_n (1).jpg",
+      "/prop-24/724243025_27632454239713892_5646232554447620769_n.jpg",
+      "/prop-24/724340293_27632454786380504_7796942702433329194_n.jpg",
+      "/prop-24/724648017_27632457929713523_6614105018774932484_n.jpg"
     ]
   }
 ];
