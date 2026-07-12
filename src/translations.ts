@@ -401,6 +401,12 @@ export const translations = {
           title: "Maisonette 80 sq.m at Vrachos Loutsa Beach",
           location: "Vrachos Loutsa, Preveza Prefecture",
           description: "First line at Vrachos Loutsa in the Preveza Prefecture. Maisonette 80 sq.m for sale consisting of 2 bedrooms, 2 bathrooms, living room, kitchen, furnished. Large balconies, outdoor space, easy access, and just 10 meters from the shore. Information at Epirus Real Estate."
+        },
+        {
+          id: 37,
+          title: "Beautiful Maisonette 155 sq.m in Loutsa - Vrachos",
+          location: "Loutsa - Vrachos, Preveza Prefecture",
+          description: "Beautiful maisonette in Loutsa - Vrachos with a total area of 155 sq.m. 5 bedrooms, 3 bathrooms, living room, kitchen. Large balconies, parking, view of the unique Ionian Sea. Information at Epirus Real Estate."
         }
       ]
     },
@@ -807,6 +813,12 @@ export const translations = {
         title: "Μεζονέτα 80τ.μ στην Παραλία Βράχου Λούτσας",
         location: "Βράχος Λούτσας, Νομός Πρέβεζας",
         description: "1η γραμμή Στον βράχο Λουτσας Στον νομο πρεβεζης πωλείται Μεζονετα 80τ.μ αποτελούμενη απο 2 υπνοδωμάτια 2 Μπανια,καθιστικό,Κουζινα, επιπλωμένη Μεγαλα Μπαλκόνια εξωτερικό χωρο ευκολη προσβαση και μολις 10 μετρα απο την Ακτή πληροφορίες Στο"
+      },
+      {
+        id: 37,
+        title: "Υπέροχη Μεζονέτα 155τ.μ στη Λούτσα - Βράχο",
+        location: "Λούτσα - Βράχος, Νομός Πρέβεζας",
+        description: "Υπεροχη μεζονέτα Στην Λουτσα - βραχος Συνολικού εμβαδού 155 τ.μ (5) Υπνοδωμάτια (3) Μπανια Καθιστικό κουζίνα Μεγαλα μπαλκόνια parking θεα το Μοναδικο Ιόνιο πληροφορίες στο"
       }
     ]
   }
@@ -1744,6 +1756,28 @@ export const BASE_PROPERTIES = [
       "/prop-29/742951654_985268977670564_4047333648269535109_n.jpg",
       "/prop-29/745320508_985269121003883_6079937421172350198_n.jpg",
       "/prop-29/745556488_985268911003904_8511623998745285436_n.jpg"
+    ]
+  },
+  {
+    id: 37,
+    price: "Κατόπιν Επικοινωνίας",
+    beds: "5",
+    baths: "3",
+    sqm: "155",
+    image: "/prop-30/741948274_985130221017773_1430604072665106277_n.jpg",
+    images: [
+      "/prop-30/741948274_985130221017773_1430604072665106277_n.jpg",
+      "/prop-30/742381805_985129901017805_8934100606351678033_n (1).jpg",
+      "/prop-30/742695438_985129871017808_3832421324068110217_n.jpg",
+      "/prop-30/742712025_985130047684457_8714340156849513995_n (1).jpg",
+      "/prop-30/742800179_985130297684432_3446962177175453868_n.jpg",
+      "/prop-30/742859164_985129784351150_7898617719730145469_n.jpg",
+      "/prop-30/743811488_985130181017777_54452344840159574_n.jpg",
+      "/prop-30/743996045_985129934351135_4260682364745015485_n (1).jpg",
+      "/prop-30/744440731_985130014351127_7848508955896131459_n.jpg",
+      "/prop-30/744440768_985130127684449_6117332313394159780_n.jpg",
+      "/prop-30/744662053_985129971017798_3415824286940253938_n (1).jpg",
+      "/prop-30/745557035_985129821017813_8972404955861499425_n.jpg"
     ]
   }
 ];
