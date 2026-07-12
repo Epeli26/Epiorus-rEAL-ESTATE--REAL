@@ -395,6 +395,12 @@ export const translations = {
           title: "House 120 sq.m for Rent in Narkissos",
           location: "Narkissos, Municipality of Parga",
           description: "House for rent in a quiet environment for long-term rental in the municipal district of Narkissos, Municipality of Parga. 2 bedrooms, living room, kitchen, 120 sq.m. Internet, parking, furnished. 7 minutes from the sea, 2 minutes from Kanallaki. Information at WhatsApp 694 486 6469."
+        },
+        {
+          id: 36,
+          title: "Maisonette 80 sq.m at Vrachos Loutsa Beach",
+          location: "Vrachos Loutsa, Preveza Prefecture",
+          description: "First line at Vrachos Loutsa in the Preveza Prefecture. Maisonette 80 sq.m for sale consisting of 2 bedrooms, 2 bathrooms, living room, kitchen, furnished. Large balconies, outdoor space, easy access, and just 10 meters from the shore. Information at Epirus Real Estate."
         }
       ]
     },
@@ -795,6 +801,12 @@ export const translations = {
         title: "Μονοκατοικία 120τ.μ προς Ενοικίαση στον Νάρκισσο",
         location: "Νάρκισσος, Δήμος Πάργας",
         description: "Ενοικιάζεται Μονοκατοικία Σε ήσυχο περιβάλλον για Μακροχρόνια ενοικίαση Στο Δημοτικό διαμέρισμα Νάρκισσος Δήμου Πάργας..2 υπνοδωμάτια καθιστικό κουζίνα 120τ.μ ίντερνετ,πάρκινγκ,επιπλωμένο απόσταση απο θάλασσα 7 λεπτα απόσταση απο το Καναλακι 2 λεπτα...πληροφορίες What's app 694 486 6469"
+      },
+      {
+        id: 36,
+        title: "Μεζονέτα 80τ.μ στην Παραλία Βράχου Λούτσας",
+        location: "Βράχος Λούτσας, Νομός Πρέβεζας",
+        description: "1η γραμμή Στον βράχο Λουτσας Στον νομο πρεβεζης πωλείται Μεζονετα 80τ.μ αποτελούμενη απο 2 υπνοδωμάτια 2 Μπανια,καθιστικό,Κουζινα, επιπλωμένη Μεγαλα Μπαλκόνια εξωτερικό χωρο ευκολη προσβαση και μολις 10 μετρα απο την Ακτή πληροφορίες Στο"
       }
     ]
   }
@@ -1718,6 +1730,20 @@ export const BASE_PROPERTIES = [
       "/prop-28/737027077_977829068414555_6920899632996927540_n.jpg",
       "/prop-28/737412802_977828818414580_5583565767202450358_n.jpg",
       "/prop-28/738759074_977828891747906_3327940163422080324_n.jpg"
+    ]
+  },
+  {
+    id: 36,
+    price: "Κατόπιν Επικοινωνίας",
+    beds: "2",
+    baths: "2",
+    sqm: "80",
+    image: "/prop-29/741215836_985269064337222_8085259259132121144_n.jpg",
+    images: [
+      "/prop-29/741215836_985269064337222_8085259259132121144_n.jpg",
+      "/prop-29/742951654_985268977670564_4047333648269535109_n.jpg",
+      "/prop-29/745320508_985269121003883_6079937421172350198_n.jpg",
+      "/prop-29/745556488_985268911003904_8511623998745285436_n.jpg"
     ]
   }
 ];
