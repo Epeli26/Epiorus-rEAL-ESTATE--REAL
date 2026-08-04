@@ -407,6 +407,12 @@ export const translations = {
           title: "Beautiful Maisonette 155 sq.m in Loutsa - Vrachos",
           location: "Loutsa - Vrachos, Preveza Prefecture",
           description: "Beautiful maisonette in Loutsa - Vrachos with a total area of 155 sq.m. 5 bedrooms, 3 bathrooms, living room, kitchen. Large balconies, parking, view of the unique Ionian Sea. Information at Epirus Real Estate."
+        },
+        {
+          id: 38,
+          title: "Unique Property 610 sq.m on the First Sea Line in Ammoudia",
+          location: "Ammoudia, Municipality of Parga",
+          description: "Unique property on the first line of the sea in Ammoudia, Municipality of Parga. Fenced, sea frontage, 610 sq.m with a building capacity of 240 sq.m and more. Suitable for commercial or private use. Information at Epirus Real Estate, WhatsApp 694 486 6469. Exclusive."
         }
       ]
     },
@@ -819,6 +825,12 @@ export const translations = {
         title: "Υπέροχη Μεζονέτα 155τ.μ στη Λούτσα - Βράχο",
         location: "Λούτσα - Βράχος, Νομός Πρέβεζας",
         description: "Υπεροχη μεζονέτα Στην Λουτσα - βραχος Συνολικού εμβαδού 155 τ.μ (5) Υπνοδωμάτια (3) Μπανια Καθιστικό κουζίνα Μεγαλα μπαλκόνια parking θεα το Μοναδικο Ιόνιο πληροφορίες στο"
+      },
+      {
+        id: 38,
+        title: "Μοναδικό Ακίνητο 610τ.μ στην 1η Γραμμή της Θάλασσας στην Αμμουδιά",
+        location: "Αμμουδιά, Δήμος Πάργας",
+        description: "Μοναδικό Ακίνητο Στην 1η Γραμμή της θάλασσας Στην Αμμουδιά του Δήμου Πάργας περιφραγμενο πρόσοψη Στην θάλασσα 610τ.μ με δόμηση 240τ.μ και πλέον..κατάλληλο ηια επαγγελματική χρήση η ιδιωτική...Πληροφορίες στο Epirus real estate Wahts app 694 486 6469 Αποκλειστικά."
       }
     ]
   }
@@ -1778,6 +1790,21 @@ export const BASE_PROPERTIES = [
       "/prop-30/744440768_985130127684449_6117332313394159780_n.jpg",
       "/prop-30/744662053_985129971017798_3415824286940253938_n (1).jpg",
       "/prop-30/745557035_985129821017813_8972404955861499425_n.jpg"
+    ]
+  },
+  {
+    id: 38,
+    price: "Κατόπιν Επικοινωνίας",
+    beds: "-",
+    baths: "-",
+    sqm: "610",
+    image: "/prop-31/01-dl-47f9a59ce496.jpg",
+    images: [
+      "/prop-31/01-dl-47f9a59ce496.jpg",
+      "/prop-31/02-dl-6e5bf34b8877.jpg",
+      "/prop-31/03-dl-1a6dfc601d47.jpg",
+      "/prop-31/04-dl-01178b4a3c1a.jpg",
+      "/prop-31/05-dl-f6e249827668.jpg"
     ]
   }
 ];
