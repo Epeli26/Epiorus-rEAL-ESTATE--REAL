@@ -32,3 +32,19 @@ footer a:hover { color: #c7b387; }
 @media (max-width: 800px) {
   .site-header { background: var(--ink); }
 }
+
+@media (max-width: 600px) {
+  .property-page-inner { padding: 66px 5vw 48px; }
+  .property-gallery { margin-top: 18px; }
+  .property-main-photo { height: 260px; }
+  .property-gallery-grid { height: 148px; }
+  .property-gallery-grid img { height: 71px; }
+  .property-heading { padding: 24px 0 18px; }
+  .property-heading h1 { font-size: 32px; line-height: 1.08; }
+  .property-heading > strong { font-size: 24px; }
+  .property-description, .property-facts { padding: 22px 0; }
+  .property-description p { font-size: 14px; }
+  .contact { padding-left: 8vw; padding-right: 8vw; }
+  .contact form { gap: 20px; grid-template-columns: 1fr; }
+  .contact form label:nth-of-type(4), .contact form button { grid-column: auto; }
+}
