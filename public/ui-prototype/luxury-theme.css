@@ -1,0 +1,34 @@
+:root {
+  --ink: #252827;
+  --coral: #9a7255;
+  --olive: #817a70;
+  --paper: #f7f4ee;
+  --sand: #eeeae2;
+  --muted: #817a70;
+  --line: #d9d4cb;
+}
+
+body { background: var(--paper); color: var(--ink); }
+.site-header { background: var(--ink); }
+.desktop-nav a:hover, .sell-link:hover { color: #c7b387; }
+.filter-bar { border-color: var(--line); }
+.filter-button, .filter-next, .sort-button { border-color: var(--line); }
+.filter-menu { position: fixed; z-index: 20; }
+.contact { background: var(--ink); color: var(--paper); }
+.contact h2, .contact p, .contact label { color: var(--paper); }
+.contact input, .contact textarea { color: var(--ink); background: var(--paper); }
+.region-section { background: var(--ink); color: var(--paper); }
+.region-section h2, .region-section p, .region-section li { color: var(--paper); }
+.button-light, .landing-button { background: var(--ink); }
+.button-light:hover, .landing-button:hover { background: var(--coral); }
+.property-modal .modal-panel { background: var(--paper); }
+.modal-contact { background: var(--ink); }
+.modal-contact:hover { background: var(--coral); }
+footer { background: var(--ink); color: var(--paper); }
+footer .footer-nav, footer .footer-contact, footer .copyright { color: var(--paper); }
+footer a:hover { color: #c7b387; }
+.privacy-section { background: var(--sand); }
+
+@media (max-width: 800px) {
+  .site-header { background: var(--ink); }
+}
