@@ -1,0 +1,184 @@
+.contact {
+	background: #202a29;
+	color: #fff;
+	display: grid;
+	gap: clamp(40px, 8vw, 110px);
+	grid-template-columns: minmax(240px, .8fr) minmax(320px, 1.2fr);
+	margin-top: 100px;
+}
+
+.contact .eyebrow {
+	color: #e1b23c;
+}
+
+.contact h2 {
+	font: 500 clamp(38px, 5vw, 64px) / .98 var(--serif);
+	margin: 0 0 24px;
+}
+
+.contact h2 em {
+	color: #f6dfaa;
+	font-style: italic;
+}
+
+.contact > div > p:last-child {
+	color: #d8e0dc;
+	font-size: 15px;
+	max-width: 300px;
+}
+
+.contact form {
+	display: grid;
+	gap: 24px 18px;
+	grid-template-columns: 1fr 1fr;
+	margin: 0;
+}
+
+.contact form label {
+	color: #f6dfaa;
+	display: flex;
+	flex-direction: column;
+	font-size: 10px;
+	gap: 8px;
+	letter-spacing: .12em;
+	text-transform: uppercase;
+}
+
+.contact form label:nth-of-type(4),
+.contact form button {
+	grid-column: 1 / -1;
+}
+
+.contact form input,
+.contact form textarea {
+	background: transparent;
+	border: 0;
+	border-bottom: 1px solid #ffffff66;
+	border-radius: 0;
+	color: #fff;
+	font-size: 15px;
+	letter-spacing: 0;
+	outline: 0;
+	padding: 8px 0 12px;
+	resize: vertical;
+}
+
+.contact form input:focus,
+.contact form textarea:focus {
+	border-bottom-color: #e1b23c;
+}
+
+.contact form input::placeholder,
+.contact form textarea::placeholder {
+	color: #ffffff99;
+}
+
+.contact form button {
+	background: #e1b23c;
+	border: 0;
+	color: #202a29;
+	cursor: pointer;
+	font-size: 11px;
+	font-weight: 700;
+	justify-self: start;
+	letter-spacing: .12em;
+	padding: 15px 22px;
+	text-transform: uppercase;
+}
+
+.contact form button:hover {
+	background: #fff;
+}
+
+@media (max-width: 800px) {
+	.contact {
+		display: block;
+	}
+
+	.contact form {
+		margin-top: 42px;
+	}
+}
+.page-landing .quick-search,
+.page-landing .desktop-nav,
+.page-landing .mobile-nav {
+	display: none !important;
+}
+
+.page-landing .landing-page {
+	display: block;
+	height: 100svh;
+	min-height: 620px;
+	padding: 0;
+}
+
+.page-landing .landing-center {
+	top: 32%;
+	width: min(1000px, 92%);
+}
+
+.page-landing .landing-center h1 {
+	font-size: clamp(42px, 4.8vw, 76px);
+	margin-bottom: 30px;
+}
+
+.page-landing .hero-search {
+	max-width: 650px;
+}
+
+.page-landing .hero-search select,
+.page-landing .hero-search input {
+	height: 46px;
+	padding-left: 16px;
+	padding-right: 16px;
+}
+
+.page-landing .hero-search a {
+	height: 36px;
+	margin: 5px;
+	padding-left: 16px;
+	padding-right: 16px;
+}
+
+.page-landing .landing-feature {
+	bottom: 36px;
+}
+
+.page-landing .landing-feature h2 {
+	font-size: 34px;
+	margin-bottom: 7px;
+}
+
+.page-landing .landing-feature p {
+	font-size: 12px;
+	margin-bottom: 12px;
+}
+
+@media (max-width: 800px) {
+	.page-landing .landing-page {
+		height: calc(100svh - 57px);
+		min-height: 560px;
+	}
+
+	.page-landing .landing-center {
+		top: 25%;
+		width: 88%;
+	}
+
+	.page-landing .landing-center h1 {
+		font-size: 44px;
+		margin-bottom: 28px;
+	}
+
+	.page-landing .hero-search {
+		max-width: 100%;
+	}
+
+	.page-landing .landing-feature {
+		bottom: 28px;
+	}
+
+	.page-landing .landing-feature h2 {
+		font-size: 30px;
+	}
+}
