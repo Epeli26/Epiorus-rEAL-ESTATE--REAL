@@ -1,4 +1,7 @@
 User-agent: *
 Allow: /
+Disallow: /old-ui-backup-2026-09-11/
+Disallow: /ui-prototype/dist/
+Disallow: /dist/
 
 Sitemap: https://www.epirusestate.com/sitemap.xml
