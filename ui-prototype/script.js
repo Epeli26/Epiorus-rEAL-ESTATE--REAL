@@ -599,7 +599,14 @@ pagination?.querySelectorAll('button').forEach((button) => button.addEventListen
   const current = currentPage;
   const label = button.textContent.trim();
   const requested = label === 'Next ›' ? Math.min(maxPage, current + 1) : label === '‹ Previous' ? Math.max(1, current - 1) : label === '«' ? 1 : label === '»' ? maxPage : Number(label);
-  if (requested && allProperties.length) showPage(requested);
+  if (requested && allProperties.length) {
+    showPage(requested);
+    document.documentElement.style.scrollBehavior = 'auto';
+    document.body.style.scrollBehavior = 'auto';
+    window.scrollTo(0, 0);
+    document.documentElement.scrollTop = 0;
+    document.body.scrollTop = 0;
+  }
 }));
 
 loadOriginalProperties();
