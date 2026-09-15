@@ -1,0 +1,10 @@
+node_modules
+.git
+.vscode
+.env*
+dist
+ui-prototype/dist
+old-ui-backup-2026-09-11
+ui-prototype/assets
+ui-prototype/README.md
+*.log
