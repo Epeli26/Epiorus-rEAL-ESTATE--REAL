@@ -63,8 +63,8 @@ cookieConsent?.querySelector('[data-cookie-allow]')?.addEventListener('click', (
 cookieConsent?.querySelector('[data-cookie-decline]')?.addEventListener('click', () => saveCookieConsent('declined'));
 cookieSettings.forEach((button) => button.addEventListener('click', showCookieConsent));
 
-document.querySelectorAll('img[src^="../public/"]').forEach((image) => {
-  image.src = image.getAttribute('src').replace('../public', 'assets');
+document.querySelectorAll('img[src^="/public/"]').forEach((image) => {
+  image.src = image.getAttribute('src').replace('/public/', '');
 });
 
 const languageText = {
@@ -209,8 +209,7 @@ function escapeHtml(value) {
 function imagePath(path) {
   if (!path) return '';
   if (/^(https?:|data:|blob:)/.test(path)) return path;
-  if (path.startsWith('assets/')) return path;
-  return `assets${path.startsWith('/') ? path : `/${path}`}`;
+  return new URL(path.replace(/^\/+/, ''), document.baseURI).href;
 }
 
 function propertyCard(property) {

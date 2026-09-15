@@ -74,19 +74,19 @@
   <style>.category-band button{background:transparent;border:0;color:var(--ink);display:block;font-size:11px;padding:0;text-align:left}.category-band button:hover{color:var(--coral);text-decoration:underline}.category-band button strong{display:block;width:100%}.listing-price:before{color:var(--muted);content:'Price ';font:600 9px var(--sans);letter-spacing:.1em;margin-right:5px;text-transform:uppercase}.property-heading>strong:before{color:var(--muted);content:'Price ';display:block;font:600 9px var(--sans);letter-spacing:.1em;margin-bottom:4px;text-transform:uppercase}.gallery-actions button[aria-label="Save property"]{display:none!important}</style>
   <style>
     .cookie-consent[hidden] { display: none; }
-    .cookie-consent { align-items: center; background: #202a29; bottom: 18px; box-shadow: 0 16px 45px #0004; color: #fff; display: flex; gap: 35px; justify-content: space-between; left: 50%; max-width: 1100px; padding: 22px 26px; position: fixed; transform: translateX(-50%); width: calc(100% - 32px); z-index: 25; }
-    .cookie-consent-copy { max-width: 570px; }
+    .cookie-consent { align-items: center; aspect-ratio: 1; background: #202a29; box-shadow: 0 16px 45px #0006; color: #fff; display: flex; flex-direction: column; gap: 24px; justify-content: center; left: 50%; max-width: 440px; padding: 42px; position: fixed; text-align: center; top: 50%; transform: translate(-50%, -50%); width: min(calc(100% - 32px), 440px); z-index: 25; }
+    .cookie-consent-copy { max-width: 320px; }
     .cookie-consent-kicker { color: #e1b23c; font-size: 10px; letter-spacing: .14em; text-transform: uppercase; }
-    .cookie-consent h2 { font: 500 25px/1.1 var(--serif); margin: 5px 0 6px; }
-    .cookie-consent p { color: #d8e0dc; font-size: 13px; margin: 0; }
-    .cookie-consent-actions { align-items: center; display: flex; flex-wrap: wrap; gap: 10px; justify-content: flex-end; }
-    .cookie-consent-actions button { border: 0; font-size: 10px; letter-spacing: .08em; padding: 13px 16px; text-transform: uppercase; }
+    .cookie-consent h2 { font: 500 23px/1.15 var(--serif); margin: 5px 0 8px; }
+    .cookie-consent p { color: #d8e0dc; font-size: 12px; line-height: 1.55; margin: 0 auto; }
+    .cookie-consent-actions { align-items: center; display: flex; flex-wrap: wrap; gap: 10px; justify-content: center; }
+    .cookie-consent-actions button { border: 0; font-size: 10px; letter-spacing: .06em; padding: 12px 14px; text-transform: uppercase; }
     .cookie-settings-link { background: transparent; color: #fff; text-decoration: underline; text-underline-offset: 4px; }
     .cookie-decline { background: transparent; border: 1px solid #ffffff66 !important; color: #fff; }
     .cookie-allow { background: #d9a828; color: #202a29; font-weight: 700; }
     .cookie-allow span { font-size: 15px; margin-left: 13px; }
     .cookie-consent-actions button:hover { opacity: .78; }
-    @media (max-width: 700px) { .cookie-consent { align-items: stretch; bottom: 10px; flex-direction: column; gap: 15px; padding: 20px; } .cookie-consent-actions { justify-content: stretch; } .cookie-consent-actions button { flex: 1; } .cookie-settings-link { flex-basis: 100%; } }
+    @media (max-width: 700px) { .cookie-consent { aspect-ratio: auto; gap: 15px; padding: 28px 20px; } .cookie-consent-actions { justify-content: stretch; width: 100%; } .cookie-consent-actions button { flex: 1; } .cookie-settings-link { flex-basis: 100%; } }
   </style>
   <section class="cookie-consent" data-cookie-consent hidden aria-label="Cookie consent">
     <div class="cookie-consent-copy">
