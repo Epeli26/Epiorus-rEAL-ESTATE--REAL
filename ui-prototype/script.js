@@ -162,6 +162,14 @@ const slideCount = document.querySelector('.slide-count');
 const featuredPanel = document.querySelector('.landing-feature');
 let activeSlide = 0;
 
+slides.forEach((slide, index) => {
+  const image = slide.querySelector('img');
+  if (image) {
+    image.loading = index === 0 ? 'eager' : 'lazy';
+    image.decoding = 'async';
+  }
+});
+
 function renderFeaturedProperty(property) {
   if (!featuredPanel || !property) return;
   const label = featuredPanel.querySelector('.feature-label');
@@ -219,7 +227,7 @@ function imagePath(path) {
 function propertyCard(property) {
   const image = property.images?.[0] || property.image;
   const photos = property.images?.length || 1;
-  return `<article class="listing-card" data-property-id="${escapeHtml(property.id)}"><div class="listing-image"><img src="${imagePath(image)}" alt="${escapeHtml(property.title)}"><span class="photo-count">▧ ${photos}</span></div><div class="listing-details"><span class="listing-label">${escapeHtml(property.type)} · ${escapeHtml(property.location)}</span><h2>${escapeHtml(property.title)}</h2><strong class="listing-price">${escapeHtml(property.price)}</strong><div class="details-row"><span>▣ &nbsp; ${escapeHtml(property.sqm)} m²</span><span>⌂ &nbsp; ${escapeHtml(property.beds)}</span><span>♧ &nbsp; ${escapeHtml(property.baths)}</span></div><p>${escapeHtml(property.description)}</p><div class="listing-bottom"><span>EPIRUS REAL ESTATE · ID ${escapeHtml(property.id)}</span><div><button class="round-action" aria-label="Email listing">✉</button><button class="round-action save" aria-label="Save listing">♡</button></div></div><span class="ribbon ${property.featured ? '' : 'olive-ribbon'}">${property.featured ? 'FEATURED' : 'CURRENT SITE'}</span></div></article>`;
+  return `<article class="listing-card" data-property-id="${escapeHtml(property.id)}"><div class="listing-image"><img src="${imagePath(image)}" alt="${escapeHtml(property.title)}" loading="lazy" decoding="async"><span class="photo-count">▧ ${photos}</span></div><div class="listing-details"><span class="listing-label">${escapeHtml(property.type)} · ${escapeHtml(property.location)}</span><h2>${escapeHtml(property.title)}</h2><strong class="listing-price">${escapeHtml(property.price)}</strong><div class="details-row"><span>▣ &nbsp; ${escapeHtml(property.sqm)} m²</span><span>⌂ &nbsp; ${escapeHtml(property.beds)}</span><span>♧ &nbsp; ${escapeHtml(property.baths)}</span></div><p>${escapeHtml(property.description)}</p><div class="listing-bottom"><span>EPIRUS REAL ESTATE · ID ${escapeHtml(property.id)}</span><div><button class="round-action" aria-label="Email listing">✉</button><button class="round-action save" aria-label="Save listing">♡</button></div></div><span class="ribbon ${property.featured ? '' : 'olive-ribbon'}">${property.featured ? 'FEATURED' : 'CURRENT SITE'}</span></div></article>`;
 }
 
 function getFallbackProperty(card) {
@@ -265,8 +273,8 @@ function renderPropertyPage(property) {
   propertyPage.querySelector('.property-description p').textContent = property.description;
   propertyPage.querySelector('.property-facts>div').innerHTML = `<span>Property type<strong>${escapeHtml(property.type)}</strong></span><span>Location<strong>${escapeHtml(property.location)}</strong></span><span>Bedrooms<strong>${escapeHtml(property.beds)}</strong></span><span>Bathrooms<strong>${escapeHtml(property.baths)}</strong></span><span>Property size<strong>${escapeHtml(property.sqm)} m²</strong></span><span>Reference<strong>EP-${escapeHtml(property.id)}</strong></span>`;
   propertyPage.querySelector('.property-photo-count').textContent = `${property.images?.length || 1} photos`;
-  propertyPage.querySelector('.property-gallery-grid').innerHTML = (property.images || [image]).slice(1, 5).map((photo) => `<img src="${imagePath(photo)}" alt="${escapeHtml(property.title)}">`).join('');
-  propertyPage.querySelector('.property-all-photos').innerHTML = (property.images || [image]).map((photo, index) => `<img src="${imagePath(photo)}" alt="${escapeHtml(property.title)} - photo ${index + 1}">`).join('');
+  propertyPage.querySelector('.property-gallery-grid').innerHTML = (property.images || [image]).slice(1, 5).map((photo) => `<img src="${imagePath(photo)}" alt="${escapeHtml(property.title)}" loading="lazy" decoding="async">`).join('');
+  propertyPage.querySelector('.property-all-photos').innerHTML = (property.images || [image]).map((photo, index) => `<img src="${imagePath(photo)}" alt="${escapeHtml(property.title)} - photo ${index + 1}" loading="lazy" decoding="async">`).join('');
 }
 
 function openLightbox(image) {
