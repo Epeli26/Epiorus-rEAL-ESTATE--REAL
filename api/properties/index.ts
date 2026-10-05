@@ -1,6 +1,6 @@
 import type { VercelRequest, VercelResponse } from '@vercel/node';
-import { getSql } from '../_db.ts';
-import { isAuthenticated } from '../_auth.ts';
+import { getSql } from '../_db';
+import { isAuthenticated } from '../_auth';
 
 export default async function handler(req: VercelRequest, res: VercelResponse) {
   const sql = getSql();
