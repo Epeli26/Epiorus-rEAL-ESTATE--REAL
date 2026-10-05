@@ -1,6 +1,7 @@
 import React, { useState, useEffect, useRef, useCallback } from 'react';
 import { Send, CheckCircle, MapPin, Phone, Mail, Clock, Facebook } from 'lucide-react';
 import { countryCodes } from './countryCodes';
+import { saveInquiry } from './propertyStore';
 
 export function ContactForm({ t }: { t: any }) {
   const [formData, setFormData] = useState({
@@ -118,6 +119,18 @@ export function ContactForm({ t }: { t: any }) {
       });
       
       if (response.ok) {
+        await saveInquiry({
+          name: `${formData.firstName} ${formData.lastName}`,
+          email: formData.email,
+          phone: `${formData.countryCode} ${formData.phone}`,
+          interest: formData.interest,
+          locations: formData.locations.join(', '),
+          types: formData.types.join(', '),
+          budget: `${formData.budgetMin} - ${formData.budgetMax}`,
+          contactMethod: formData.contactMethod,
+          bestTime: formData.bestTime,
+          message: formData.message,
+        });
         setSubmitState('success');
         setTimeout(() => {
           setSubmitState('idle');

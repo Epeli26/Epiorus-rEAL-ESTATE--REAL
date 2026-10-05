@@ -142,6 +142,12 @@ heroSearch?.querySelector('a')?.addEventListener('click', (event) => {
 languageButton?.addEventListener('click', () => {
   currentLanguage = currentLanguage === 'en' ? 'el' : 'en';
   if (sourceProperties.length) {
+    try {
+      const storedProperties = JSON.parse(localStorage.getItem('epirus_admin_properties_v1') || 'null');
+      if (Array.isArray(storedProperties)) sourceProperties = storedProperties;
+    } catch (storageError) {
+      console.error('Saved property edits could not be loaded:', storageError);
+    }
     allProperties = localizeProperties();
     filteredProperties = allProperties;
     showPage(1);
@@ -626,6 +632,23 @@ form.addEventListener('submit', async (event) => {
     });
 
     if (!response.ok) throw new Error('Form submission failed');
+
+    const inquiries = JSON.parse(localStorage.getItem('epirus_admin_inquiries_v1') || '[]');
+    inquiries.unshift({
+      id: `inquiry-${Date.now()}`,
+      createdAt: new Date().toISOString(),
+      name: formData.get('name') || '',
+      email: formData.get('email') || '',
+      phone: formData.get('phone') || '',
+      interest: '',
+      locations: '',
+      types: '',
+      budget: '',
+      contactMethod: '',
+      bestTime: '',
+      message: formData.get('message') || ''
+    });
+    localStorage.setItem('epirus_admin_inquiries_v1', JSON.stringify(inquiries));
 
     button.innerHTML = 'Inquiry sent <span>✓</span>';
     button.classList.add('sent');

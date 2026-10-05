@@ -1,0 +1,266 @@
+import React, { useEffect, useMemo, useState } from 'react';
+import { ArrowLeft, BarChart3, Check, ChevronRight, FileText, ImagePlus, LayoutList, LogOut, Mail, Pencil, Plus, Save, Search, Settings, Trash2, UploadCloud, X } from 'lucide-react';
+import { PROPERTIES } from './App';
+import {
+  AdminProperty,
+  Inquiry,
+  adminLogin,
+  adminLogout,
+  checkAdminSession,
+  createProperty as apiCreateProperty,
+  deleteProperty as apiDeleteProperty,
+  fetchInquiries,
+  fetchProperties,
+  updateProperty as apiUpdateProperty,
+} from './propertyStore';
+
+const defaultProperty: AdminProperty = {
+  id: 0,
+  title: '',
+  location: '',
+  price: '',
+  type: 'house',
+  beds: '-',
+  baths: '-',
+  sqm: '',
+  image: '',
+  images: [],
+  featured: false,
+  description: '',
+};
+
+const formatDate = (date: string) => new Intl.DateTimeFormat('en-GB', { day: '2-digit', month: 'short', year: 'numeric' }).format(new Date(date));
+
+const getGreeting = () => {
+  const hour = new Date().getHours();
+  if (hour < 12) return 'Good morning';
+  if (hour < 18) return 'Good afternoon';
+  return 'Good evening';
+};
+
+export function AdminPanel() {
+  const [authStatus, setAuthStatus] = useState<'checking' | 'in' | 'out'>('checking');
+  const [passwordInput, setPasswordInput] = useState('');
+  const [loginError, setLoginError] = useState('');
+  const [loggingIn, setLoggingIn] = useState(false);
+
+  const [properties, setProperties] = useState<AdminProperty[]>(() => PROPERTIES as unknown as AdminProperty[]);
+  const [inquiries, setInquiries] = useState<Inquiry[]>([]);
+  const [activeView, setActiveView] = useState<'overview' | 'listings' | 'inquiries'>('overview');
+  const [selectedId, setSelectedId] = useState<number | null>(null);
+  const [query, setQuery] = useState('');
+  const [saved, setSaved] = useState(false);
+  const [selectedInquiry, setSelectedInquiry] = useState<Inquiry | null>(null);
+
+  useEffect(() => {
+    checkAdminSession().then((authenticated) => setAuthStatus(authenticated ? 'in' : 'out'));
+  }, []);
+
+  useEffect(() => {
+    if (authStatus !== 'in') return;
+    fetchProperties(PROPERTIES as unknown as AdminProperty[]).then(setProperties);
+    fetchInquiries().then(setInquiries).catch(() => {});
+  }, [authStatus]);
+
+  const handleLogin = async (event: React.FormEvent) => {
+    event.preventDefault();
+    setLoggingIn(true);
+    setLoginError('');
+    const ok = await adminLogin(passwordInput);
+    setLoggingIn(false);
+    if (ok) {
+      setPasswordInput('');
+      setAuthStatus('in');
+    } else {
+      setLoginError('Incorrect password.');
+    }
+  };
+
+  const handleLogout = async () => {
+    await adminLogout();
+    setAuthStatus('out');
+  };
+
+  const selectedProperty = properties.find((property) => property.id === selectedId) || null;
+  const filteredProperties = useMemo(() => {
+    const normalizedQuery = query.trim().toLowerCase();
+    if (!normalizedQuery) return properties;
+    return properties.filter((property) => `${property.title} ${property.location} ${property.type}`.toLowerCase().includes(normalizedQuery));
+  }, [properties, query]);
+
+  const updateProperty = async (nextProperty: AdminProperty) => {
+    const saved = await apiUpdateProperty(nextProperty);
+    setProperties((current) => current.map((property) => property.id === saved.id ? saved : property));
+    setSaved(true);
+    window.setTimeout(() => setSaved(false), 2200);
+  };
+
+  const createProperty = async () => {
+    const created = await apiCreateProperty(defaultProperty);
+    setProperties((current) => [created, ...current]);
+    setSelectedId(created.id);
+    setActiveView('listings');
+  };
+
+  const deleteProperty = async (id: number) => {
+    if (!window.confirm('Delete this listing?')) return;
+    await apiDeleteProperty(id);
+    setProperties((current) => current.filter((property) => property.id !== id));
+    setSelectedId(null);
+  };
+
+  if (authStatus === 'checking') {
+    return <div className="admin-shell admin-loading">Loading…</div>;
+  }
+
+  if (authStatus === 'out') {
+    return (
+      <div className="admin-login-screen">
+        <form className="admin-login-card" onSubmit={handleLogin}>
+          <span className="admin-brand-mark">E</span>
+          <h1>Owner Desk</h1>
+          <p>Sign in to manage listings and inquiries.</p>
+          <input
+            type="password"
+            value={passwordInput}
+            onChange={(event) => setPasswordInput(event.target.value)}
+            placeholder="Admin password"
+            autoFocus
+          />
+          {loginError && <span className="admin-login-error">{loginError}</span>}
+          <button type="submit" className="admin-primary" disabled={loggingIn}>{loggingIn ? 'Signing in…' : 'Sign in'}</button>
+        </form>
+      </div>
+    );
+  }
+
+  return (
+    <div className="admin-shell">
+      <aside className="admin-sidebar">
+        <a className="admin-brand" href="/" aria-label="Back to Epirus Estate">
+          <span className="admin-brand-mark">E</span>
+          <span><strong>EPIRUS</strong><small>OWNER DESK</small></span>
+        </a>
+        <div className="admin-workspace"><span className="admin-status-dot" /> Live workspace</div>
+        <nav className="admin-nav" aria-label="Admin navigation">
+          <button className={activeView === 'overview' ? 'active' : ''} onClick={() => setActiveView('overview')}><BarChart3 size={17} /> Overview</button>
+          <button className={activeView === 'listings' ? 'active' : ''} onClick={() => setActiveView('listings')}><LayoutList size={17} /> Listings <span>{properties.length}</span></button>
+          <button className={activeView === 'inquiries' ? 'active' : ''} onClick={() => setActiveView('inquiries')}><Mail size={17} /> Inquiries <span>{inquiries.length}</span></button>
+        </nav>
+        <div className="admin-sidebar-bottom">
+          <button><Settings size={17} /> Settings</button>
+          <button onClick={handleLogout}><LogOut size={17} /> Log out</button>
+        </div>
+      </aside>
+
+      <main className="admin-main">
+        <header className="admin-topbar">
+          <div><p className="admin-kicker">EPIRUS REAL ESTATE / OWNER DESK</p><h1>{activeView === 'overview' ? `${getGreeting()}, Christos` : activeView === 'listings' ? 'Listings' : 'Inquiries'}</h1></div>
+          <div className="admin-top-actions">
+            {saved && <span className="admin-saved"><Check size={15} /> Saved</span>}
+            <button className="admin-avatar" aria-label="Owner profile">C</button>
+          </div>
+        </header>
+
+        {activeView === 'overview' && (
+          <Overview properties={properties} inquiries={inquiries} onListings={() => setActiveView('listings')} onInquiries={() => setActiveView('inquiries')} />
+        )}
+
+        {activeView === 'listings' && (
+          <section className="admin-content">
+            <div className="admin-toolbar">
+              <label className="admin-search"><Search size={17} /><input value={query} onChange={(event) => setQuery(event.target.value)} placeholder="Search listings" /></label>
+              <div className="admin-toolbar-actions"><button className="admin-primary" onClick={createProperty}><Plus size={17} /> Create listing</button></div>
+            </div>
+            <div className={`admin-listing-layout ${selectedProperty ? '' : 'full'}`}>
+              <div className="admin-table-wrap">
+                <table className="admin-table">
+                  <thead>
+                    <tr><th>#</th><th>Property</th><th>Type</th><th>Price</th><th>Featured</th><th>Status</th><th>Action</th></tr>
+                  </thead>
+                  <tbody>
+                    {filteredProperties.map((property, index) => (
+                      <tr className={selectedId === property.id ? 'selected' : ''} key={property.id}>
+                        <td className="admin-table-index">{index + 1}</td>
+                        <td>
+                          <button className="admin-listing-name" onClick={() => setSelectedId(property.id)}>
+                            <img src={property.image || '/about-photo.jpg'} alt="" />
+                            <span><strong>{property.title || 'Untitled listing'}</strong><small>{property.location || 'Location pending'}</small></span>
+                          </button>
+                        </td>
+                        <td><i className="admin-pill admin-pill-type">{property.type}</i></td>
+                        <td>{property.price || 'Price on request'}</td>
+                        <td>{property.featured ? <i className="admin-pill admin-pill-featured">Yes</i> : <i className="admin-pill admin-pill-muted">No</i>}</td>
+                        <td><i className="admin-pill admin-pill-active">Active</i></td>
+                        <td>
+                          <div className="admin-row-actions">
+                            <button className="admin-icon-chip edit" onClick={() => setSelectedId(property.id)} aria-label="Edit listing"><Pencil size={14} /></button>
+                            <button className="admin-icon-chip delete" onClick={() => deleteProperty(property.id)} aria-label="Delete listing"><Trash2 size={14} /></button>
+                          </div>
+                        </td>
+                      </tr>
+                    ))}
+                  </tbody>
+                </table>
+                {filteredProperties.length === 0 && <div className="admin-empty">No listings match your search.</div>}
+              </div>
+              {selectedProperty && <PropertyEditor property={selectedProperty} onSave={updateProperty} onDelete={deleteProperty} onClose={() => setSelectedId(null)} />}
+            </div>
+          </section>
+        )}
+
+        {activeView === 'inquiries' && (
+          <section className="admin-content">
+            <div className="admin-toolbar"><div><p className="admin-kicker">CONTACT FORM</p><h2 className="admin-section-title">Latest conversations</h2></div><span className="admin-count">{inquiries.length} total</span></div>
+            <div className="admin-inquiry-layout">
+              <div className="admin-inquiry-list">
+                {inquiries.map((inquiry) => <button className={`admin-inquiry-row ${selectedInquiry?.id === inquiry.id ? 'selected' : ''}`} key={inquiry.id} onClick={() => setSelectedInquiry(inquiry)}><span className="admin-inquiry-avatar">{inquiry.name.charAt(0).toUpperCase()}</span><span><strong>{inquiry.name}</strong><small>{inquiry.interest || 'General inquiry'} · {formatDate(inquiry.createdAt)}</small></span><ChevronRight size={17} /></button>)}
+                {inquiries.length === 0 && <div className="admin-empty"><Mail size={30} /><strong>No inquiries yet</strong><span>New contact form answers will appear here.</span></div>}
+              </div>
+              {selectedInquiry && <InquiryDetail inquiry={selectedInquiry} onClose={() => setSelectedInquiry(null)} />}
+            </div>
+          </section>
+        )}
+      </main>
+    </div>
+  );
+}
+
+function Overview({ properties, inquiries, onListings, onInquiries }: { properties: AdminProperty[]; inquiries: Inquiry[]; onListings: () => void; onInquiries: () => void }) {
+  const featured = properties.filter((property) => property.featured).length;
+  return <section className="admin-content">
+    <div className="admin-welcome"><div><p className="admin-kicker">TUESDAY, 22 SEPTEMBER 2026</p><h2>Here is what is happening today.</h2></div><button className="admin-primary" onClick={onListings}><Plus size={17} /> New listing</button></div>
+    <div className="admin-stat-grid"><button onClick={onListings}><span>Active listings</span><strong>{properties.length}</strong><small><span className="admin-up">+{featured}</span> featured properties</small></button><button onClick={onInquiries}><span>New inquiries</span><strong>{inquiries.length}</strong><small>From contact form</small></button><button onClick={onListings}><span>Property types</span><strong>{new Set(properties.map((property) => property.type)).size}</strong><small>Across your catalog</small></button></div>
+    <div className="admin-overview-grid"><div className="admin-panel"><div className="admin-panel-heading"><div><p className="admin-kicker">CATALOG</p><h3>Recent listings</h3></div><button onClick={onListings}>View all <ArrowLeft size={15} /></button></div>{properties.slice(0, 5).map((property) => <button className="admin-mini-row" key={property.id} onClick={onListings}><img src={property.image || '/about-photo.jpg'} alt="" /><span><strong>{property.title}</strong><small>{property.location}</small></span><b>{property.price}</b></button>)}</div><div className="admin-panel admin-inbox-preview"><div className="admin-panel-heading"><div><p className="admin-kicker">INBOX</p><h3>Recent inquiries</h3></div><button onClick={onInquiries}>View all <ArrowLeft size={15} /></button></div>{inquiries.slice(0, 4).map((inquiry) => <button className="admin-mini-inquiry" key={inquiry.id} onClick={onInquiries}><span className="admin-inquiry-avatar">{inquiry.name.charAt(0).toUpperCase()}</span><span><strong>{inquiry.name}</strong><small>{inquiry.message || 'No message'}</small></span></button>)}{inquiries.length === 0 && <div className="admin-preview-empty">Your inbox is clear.</div>}</div></div>
+  </section>;
+}
+
+function PropertyEditor({ property, onSave, onDelete, onClose }: { property: AdminProperty; onSave: (property: AdminProperty) => void; onDelete: (id: number) => void; onClose: () => void }) {
+  const [draft, setDraft] = useState<AdminProperty>(property);
+  const setField = (field: keyof AdminProperty, value: string | boolean) => setDraft((current) => ({ ...current, [field]: value }));
+  const addImages = (files: FileList | null) => {
+    if (!files || files.length === 0) return;
+    Promise.all(Array.from(files).map((file) => new Promise<string>((resolve, reject) => {
+      const reader = new FileReader();
+      reader.onload = () => resolve(reader.result as string);
+      reader.onerror = () => reject(reader.error);
+      reader.readAsDataURL(file);
+    }))).then((dataUrls) => {
+      setDraft((current) => {
+        const images = [...current.images, ...dataUrls];
+        return { ...current, images, image: current.image || images[0] || '' };
+      });
+    });
+  };
+  const removeImage = (index: number) => {
+    setDraft((current) => {
+      const images = current.images.filter((_, i) => i !== index);
+      return { ...current, images, image: images[0] || '' };
+    });
+  };
+  return <aside className="admin-editor"><div className="admin-editor-heading"><div><p className="admin-kicker">EDIT LISTING</p><h2>{draft.title || 'New listing'}</h2></div><button className="admin-icon-button" onClick={onClose} aria-label="Close editor"><X size={18} /></button></div><div className="admin-editor-body"><label>Title<input value={draft.title} onChange={(event) => setField('title', event.target.value)} /></label><label>Location<input value={draft.location} onChange={(event) => setField('location', event.target.value)} /></label><div className="admin-form-grid"><label>Price<input value={draft.price} onChange={(event) => setField('price', event.target.value)} /></label><label>Type<select value={draft.type} onChange={(event) => setField('type', event.target.value)}><option value="house">House</option><option value="villa">Villa</option><option value="land">Land</option><option value="apartment">Apartment</option><option value="commercial">Commercial</option></select></label><label>Beds<input value={draft.beds} onChange={(event) => setField('beds', event.target.value)} /></label><label>Baths<input value={draft.baths} onChange={(event) => setField('baths', event.target.value)} /></label><label>Size (m²)<input value={draft.sqm} onChange={(event) => setField('sqm', event.target.value)} /></label></div><label>Description<textarea rows={7} value={draft.description} onChange={(event) => setField('description', event.target.value)} /></label><label className="admin-checkbox"><input type="checkbox" checked={Boolean(draft.featured)} onChange={(event) => setField('featured', event.target.checked)} /> Feature this property</label><div className="admin-photo-field"><span className="admin-photo-field-label"><ImagePlus size={16} /> Property photos <small>First photo is the cover image</small></span>{draft.images.length > 0 && <div className="admin-photo-grid">{draft.images.map((image, index) => <div className="admin-photo-thumb" key={index}><img src={image} alt="" /><button type="button" className="admin-photo-remove" onClick={() => removeImage(index)} aria-label="Remove photo"><X size={13} /></button></div>)}</div>}<label className="admin-upload-button"><UploadCloud size={15} /> Upload photos<input type="file" accept="image/*" multiple onChange={(event) => { addImages(event.target.files); event.target.value = ''; }} hidden /></label></div></div><div className="admin-editor-footer"><button className="admin-danger" onClick={() => onDelete(draft.id)}><Trash2 size={16} /> Delete</button><button className="admin-primary" onClick={() => onSave(draft)}><Save size={16} /> Save listing</button></div></aside>;
+}
+
+function InquiryDetail({ inquiry, onClose }: { inquiry: Inquiry; onClose: () => void }) {
+  return <aside className="admin-editor admin-inquiry-detail"><div className="admin-editor-heading"><div><p className="admin-kicker">INQUIRY / {formatDate(inquiry.createdAt)}</p><h2>{inquiry.name}</h2></div><button className="admin-icon-button" onClick={onClose} aria-label="Close inquiry"><X size={18} /></button></div><div className="admin-editor-body"><a className="admin-contact-link" href={`mailto:${inquiry.email}`}><Mail size={16} /> {inquiry.email}</a>{inquiry.phone && <p className="admin-detail-line"><strong>Phone</strong>{inquiry.phone}</p>}<p className="admin-detail-line"><strong>Interested in</strong>{inquiry.interest || 'Not specified'}</p><p className="admin-detail-line"><strong>Locations</strong>{inquiry.locations || 'Not specified'}</p><p className="admin-detail-line"><strong>Property types</strong>{inquiry.types || 'Not specified'}</p><p className="admin-detail-line"><strong>Budget</strong>{inquiry.budget || 'Not specified'}</p><p className="admin-detail-line"><strong>Preferred contact</strong>{inquiry.contactMethod || 'Not specified'}{inquiry.bestTime && ` · ${inquiry.bestTime}`}</p><div className="admin-message"><p className="admin-kicker">MESSAGE</p><p>{inquiry.message || 'No message provided.'}</p></div></div></aside>;
+}

@@ -10,8 +10,9 @@ import { translations } from './translations';
 import { ContactForm } from './ContactForm';
 import { PrivacyPolicyContent } from './PrivacyPolicyContent';
 import { TermsConditionsContent } from './TermsConditionsContent';
+import { loadStoredProperties, fetchProperties } from './propertyStore';
 
-const PROPERTIES = [
+export const PROPERTIES = [
   {
     id: 29,
     title: "Μοναδικό οικόπεδο στο Βάλτο Πάργας",
@@ -1790,6 +1791,11 @@ export default function App() {
   const [showCookieSettings, setShowCookieSettings] = useState(false);
   const [lang, setLang] = useState<'el' | 'en'>('en');
   const [initialLoad, setInitialLoad] = useState(true);
+  const [properties, setProperties] = useState(() => loadStoredProperties(PROPERTIES));
+
+  useEffect(() => {
+    fetchProperties(PROPERTIES).then(setProperties);
+  }, []);
 
   useEffect(() => {
     const handleDetails = (e: any) => setSelectedProperty(e.detail);
@@ -1824,7 +1830,7 @@ export default function App() {
     }
   }, [lang, t]);
 
-  const translatedProperties = PROPERTIES.map(prop => {
+  const translatedProperties = properties.map(prop => {
     const translation = t.properties.find((p: any) => String(p.id) === String(prop.id));
     return {
       ...prop,
