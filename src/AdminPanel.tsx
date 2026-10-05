@@ -88,24 +88,38 @@ export function AdminPanel() {
     return properties.filter((property) => `${property.title} ${property.location} ${property.type}`.toLowerCase().includes(normalizedQuery));
   }, [properties, query]);
 
-  const updateProperty = async (nextProperty: AdminProperty) => {
-    const saved = await apiUpdateProperty(nextProperty);
-    setProperties((current) => current.map((property) => property.id === saved.id ? saved : property));
+  const isDraft = (id: number) => id < 0;
+
+  const saveProperty = async (nextProperty: AdminProperty) => {
+    const persisted = isDraft(nextProperty.id)
+      ? await apiCreateProperty(nextProperty)
+      : await apiUpdateProperty(nextProperty);
+    setProperties((current) => current.map((property) => property.id === nextProperty.id ? persisted : property));
+    setSelectedId(persisted.id);
     setSaved(true);
     window.setTimeout(() => setSaved(false), 2200);
   };
 
-  const createProperty = async () => {
-    const created = await apiCreateProperty(defaultProperty);
-    setProperties((current) => [created, ...current]);
-    setSelectedId(created.id);
+  const createProperty = () => {
+    const draft = { ...defaultProperty, id: -Date.now() };
+    setProperties((current) => [draft, ...current]);
+    setSelectedId(draft.id);
     setActiveView('listings');
   };
 
   const deleteProperty = async (id: number) => {
-    if (!window.confirm('Delete this listing?')) return;
-    await apiDeleteProperty(id);
+    if (!isDraft(id)) {
+      if (!window.confirm('Delete this listing?')) return;
+      await apiDeleteProperty(id);
+    }
     setProperties((current) => current.filter((property) => property.id !== id));
+    setSelectedId(null);
+  };
+
+  const closeEditor = (id: number) => {
+    if (isDraft(id)) {
+      setProperties((current) => current.filter((property) => property.id !== id));
+    }
     setSelectedId(null);
   };
 
@@ -204,7 +218,7 @@ export function AdminPanel() {
                 </table>
                 {filteredProperties.length === 0 && <div className="admin-empty">No listings match your search.</div>}
               </div>
-              {selectedProperty && <PropertyEditor property={selectedProperty} onSave={updateProperty} onDelete={deleteProperty} onClose={() => setSelectedId(null)} />}
+              {selectedProperty && <PropertyEditor property={selectedProperty} onSave={saveProperty} onDelete={deleteProperty} onClose={() => closeEditor(selectedProperty.id)} />}
             </div>
           </section>
         )}
