@@ -50,6 +50,8 @@ export function AdminPanel() {
   const [selectedId, setSelectedId] = useState<number | null>(null);
   const [query, setQuery] = useState('');
   const [saved, setSaved] = useState(false);
+  const [savingProperty, setSavingProperty] = useState(false);
+  const [saveError, setSaveError] = useState('');
   const [selectedInquiry, setSelectedInquiry] = useState<Inquiry | null>(null);
 
   useEffect(() => {
@@ -91,13 +93,21 @@ export function AdminPanel() {
   const isDraft = (id: number) => id < 0;
 
   const saveProperty = async (nextProperty: AdminProperty) => {
-    const persisted = isDraft(nextProperty.id)
-      ? await apiCreateProperty(nextProperty)
-      : await apiUpdateProperty(nextProperty);
-    setProperties((current) => current.map((property) => property.id === nextProperty.id ? persisted : property));
-    setSelectedId(persisted.id);
-    setSaved(true);
-    window.setTimeout(() => setSaved(false), 2200);
+    setSavingProperty(true);
+    setSaveError('');
+    try {
+      const persisted = isDraft(nextProperty.id)
+        ? await apiCreateProperty(nextProperty)
+        : await apiUpdateProperty(nextProperty);
+      setProperties((current) => current.map((property) => property.id === nextProperty.id ? persisted : property));
+      setSelectedId(persisted.id);
+      setSaved(true);
+      window.setTimeout(() => setSaved(false), 2200);
+    } catch (error) {
+      setSaveError(error instanceof Error ? error.message : 'Unable to save this listing.');
+    } finally {
+      setSavingProperty(false);
+    }
   };
 
   const createProperty = () => {
@@ -218,7 +228,7 @@ export function AdminPanel() {
                 </table>
                 {filteredProperties.length === 0 && <div className="admin-empty">No listings match your search.</div>}
               </div>
-              {selectedProperty && <PropertyEditor property={selectedProperty} onSave={saveProperty} onDelete={deleteProperty} onClose={() => closeEditor(selectedProperty.id)} />}
+              {selectedProperty && <PropertyEditor property={selectedProperty} onSave={saveProperty} onDelete={deleteProperty} onClose={() => closeEditor(selectedProperty.id)} saving={savingProperty} saveError={saveError} />}
             </div>
           </section>
         )}
@@ -249,22 +259,26 @@ function Overview({ properties, inquiries, onListings, onInquiries }: { properti
   </section>;
 }
 
-function PropertyEditor({ property, onSave, onDelete, onClose }: { property: AdminProperty; onSave: (property: AdminProperty) => void; onDelete: (id: number) => void; onClose: () => void }) {
+function PropertyEditor({ property, onSave, onDelete, onClose, saving, saveError }: { property: AdminProperty; onSave: (property: AdminProperty) => Promise<void>; onDelete: (id: number) => void; onClose: () => void; saving: boolean; saveError: string }) {
   const [draft, setDraft] = useState<AdminProperty>(property);
+  const [photoError, setPhotoError] = useState('');
+  const [compressingPhotos, setCompressingPhotos] = useState(false);
   const setField = (field: keyof AdminProperty, value: string | boolean) => setDraft((current) => ({ ...current, [field]: value }));
-  const addImages = (files: FileList | null) => {
+  const addImages = async (files: FileList | null) => {
     if (!files || files.length === 0) return;
-    Promise.all(Array.from(files).map((file) => new Promise<string>((resolve, reject) => {
-      const reader = new FileReader();
-      reader.onload = () => resolve(reader.result as string);
-      reader.onerror = () => reject(reader.error);
-      reader.readAsDataURL(file);
-    }))).then((dataUrls) => {
+    setPhotoError('');
+    setCompressingPhotos(true);
+    try {
+      const dataUrls = await Promise.all(Array.from(files).map(compressPhoto));
       setDraft((current) => {
         const images = [...current.images, ...dataUrls];
         return { ...current, images, image: current.image || images[0] || '' };
       });
-    });
+    } catch (error) {
+      setPhotoError(error instanceof Error ? error.message : 'Unable to process the selected photo.');
+    } finally {
+      setCompressingPhotos(false);
+    }
   };
   const removeImage = (index: number) => {
     setDraft((current) => {
@@ -272,7 +286,46 @@ function PropertyEditor({ property, onSave, onDelete, onClose }: { property: Adm
       return { ...current, images, image: images[0] || '' };
     });
   };
-  return <aside className="admin-editor"><div className="admin-editor-heading"><div><p className="admin-kicker">EDIT LISTING</p><h2>{draft.title || 'New listing'}</h2></div><button className="admin-icon-button" onClick={onClose} aria-label="Close editor"><X size={18} /></button></div><div className="admin-editor-body"><label>Title<input value={draft.title} onChange={(event) => setField('title', event.target.value)} /></label><label>Location<input value={draft.location} onChange={(event) => setField('location', event.target.value)} /></label><div className="admin-form-grid"><label>Price<input value={draft.price} onChange={(event) => setField('price', event.target.value)} /></label><label>Type<select value={draft.type} onChange={(event) => setField('type', event.target.value)}><option value="house">House</option><option value="villa">Villa</option><option value="land">Land</option><option value="apartment">Apartment</option><option value="commercial">Commercial</option></select></label><label>Beds<input value={draft.beds} onChange={(event) => setField('beds', event.target.value)} /></label><label>Baths<input value={draft.baths} onChange={(event) => setField('baths', event.target.value)} /></label><label>Size (m²)<input value={draft.sqm} onChange={(event) => setField('sqm', event.target.value)} /></label></div><label>Description<textarea rows={7} value={draft.description} onChange={(event) => setField('description', event.target.value)} /></label><label className="admin-checkbox"><input type="checkbox" checked={Boolean(draft.featured)} onChange={(event) => setField('featured', event.target.checked)} /> Feature this property</label><div className="admin-photo-field"><span className="admin-photo-field-label"><ImagePlus size={16} /> Property photos <small>First photo is the cover image</small></span>{draft.images.length > 0 && <div className="admin-photo-grid">{draft.images.map((image, index) => <div className="admin-photo-thumb" key={index}><img src={image} alt="" /><button type="button" className="admin-photo-remove" onClick={() => removeImage(index)} aria-label="Remove photo"><X size={13} /></button></div>)}</div>}<label className="admin-upload-button"><UploadCloud size={15} /> Upload photos<input type="file" accept="image/*" multiple onChange={(event) => { addImages(event.target.files); event.target.value = ''; }} hidden /></label></div></div><div className="admin-editor-footer"><button className="admin-danger" onClick={() => onDelete(draft.id)}><Trash2 size={16} /> Delete</button><button className="admin-primary" onClick={() => onSave(draft)}><Save size={16} /> Save listing</button></div></aside>;
+  return <aside className="admin-editor"><div className="admin-editor-heading"><div><p className="admin-kicker">EDIT LISTING</p><h2>{draft.title || 'New listing'}</h2></div><button className="admin-icon-button" onClick={onClose} aria-label="Close editor"><X size={18} /></button></div><div className="admin-editor-body"><label>Title<input value={draft.title} onChange={(event) => setField('title', event.target.value)} /></label><label>Location<input value={draft.location} onChange={(event) => setField('location', event.target.value)} /></label><div className="admin-form-grid"><label>Price<input value={draft.price} onChange={(event) => setField('price', event.target.value)} /></label><label>Type<select value={draft.type} onChange={(event) => setField('type', event.target.value)}><option value="house">House</option><option value="villa">Villa</option><option value="land">Land</option><option value="apartment">Apartment</option><option value="commercial">Commercial</option></select></label><label>Beds<input value={draft.beds} onChange={(event) => setField('beds', event.target.value)} /></label><label>Baths<input value={draft.baths} onChange={(event) => setField('baths', event.target.value)} /></label><label>Size (m²)<input value={draft.sqm} onChange={(event) => setField('sqm', event.target.value)} /></label></div><label>Description<textarea rows={7} value={draft.description} onChange={(event) => setField('description', event.target.value)} /></label><label className="admin-checkbox"><input type="checkbox" checked={Boolean(draft.featured)} onChange={(event) => setField('featured', event.target.checked)} /> Feature this property</label><div className="admin-photo-field"><span className="admin-photo-field-label"><ImagePlus size={16} /> Property photos <small>First photo is the cover image</small></span>{draft.images.length > 0 && <div className="admin-photo-grid">{draft.images.map((image, index) => <div className="admin-photo-thumb" key={index}><img src={image} alt="" /><button type="button" className="admin-photo-remove" onClick={() => removeImage(index)} aria-label="Remove photo"><X size={13} /></button></div>)}</div>}{photoError && <span className="admin-login-error">{photoError}</span>}<label className="admin-upload-button"><UploadCloud size={15} /> {compressingPhotos ? 'Preparing photos…' : 'Upload photos'}<input type="file" accept="image/jpeg,image/png,image/webp" multiple disabled={compressingPhotos} onChange={(event) => { void addImages(event.target.files); event.target.value = ''; }} hidden /></label></div></div><div className="admin-editor-footer">{saveError && <span className="admin-login-error">{saveError}</span>}<button className="admin-danger" onClick={() => onDelete(draft.id)} disabled={saving}><Trash2 size={16} /> Delete</button><button className="admin-primary" onClick={() => void onSave(draft)} disabled={saving || compressingPhotos}><Save size={16} /> {saving ? 'Saving…' : 'Save listing'}</button></div></aside>;
+}
+
+async function compressPhoto(file: File): Promise<string> {
+  let bitmap: ImageBitmap;
+  try {
+    bitmap = await createImageBitmap(file);
+  } catch {
+    throw new Error(`Could not read "${file.name}" as an image.`);
+  }
+
+  try {
+    let maxDimension = 1800;
+    let quality = 0.84;
+    for (let attempt = 0; attempt < 8; attempt += 1) {
+      const scale = Math.min(1, maxDimension / Math.max(bitmap.width, bitmap.height));
+      const canvas = document.createElement('canvas');
+      canvas.width = Math.max(1, Math.round(bitmap.width * scale));
+      canvas.height = Math.max(1, Math.round(bitmap.height * scale));
+      const context = canvas.getContext('2d');
+      if (!context) throw new Error('Your browser could not prepare the selected photo.');
+      context.drawImage(bitmap, 0, 0, canvas.width, canvas.height);
+
+      const blob = await new Promise<Blob | null>((resolve) => canvas.toBlob(resolve, 'image/webp', quality));
+      if (blob && blob.size <= 1_500_000) {
+        return await new Promise<string>((resolve, reject) => {
+          const reader = new FileReader();
+          reader.onload = () => typeof reader.result === 'string' ? resolve(reader.result) : reject(new Error('Unable to read the compressed photo.'));
+          reader.onerror = () => reject(reader.error ?? new Error('Unable to read the compressed photo.'));
+          reader.readAsDataURL(blob);
+        });
+      }
+
+      maxDimension *= 0.82;
+      quality = Math.max(0.5, quality - 0.06);
+    }
+    throw new Error(`"${file.name}" is too large to upload. Choose a smaller photo.`);
+  } finally {
+    bitmap.close();
+  }
 }
 
 function InquiryDetail({ inquiry, onClose }: { inquiry: Inquiry; onClose: () => void }) {

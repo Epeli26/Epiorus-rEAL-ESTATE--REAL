@@ -65,22 +65,24 @@ export async function fetchProperties<T>(defaults: T[]): Promise<T[]> {
 }
 
 export async function createProperty(property: Omit<AdminProperty, 'id'>): Promise<AdminProperty> {
+  const uploadedProperty = await uploadPendingImages(property);
   const response = await fetch('/api/properties', {
     method: 'POST',
     headers: { 'Content-Type': 'application/json' },
-    body: JSON.stringify(property),
+    body: JSON.stringify(uploadedProperty),
   });
-  if (!response.ok) throw new Error('Failed to create property');
+  if (!response.ok) throw await getRequestError(response, 'Failed to create property');
   return response.json();
 }
 
 export async function updateProperty(property: AdminProperty): Promise<AdminProperty> {
+  const uploadedProperty = await uploadPendingImages(property);
   const response = await fetch(`/api/properties/${property.id}`, {
     method: 'PUT',
     headers: { 'Content-Type': 'application/json' },
-    body: JSON.stringify(property),
+    body: JSON.stringify(uploadedProperty),
   });
-  if (!response.ok) throw new Error('Failed to update property');
+  if (!response.ok) throw await getRequestError(response, 'Failed to update property');
   return response.json();
 }
 
@@ -132,4 +134,41 @@ export async function checkAdminSession(): Promise<boolean> {
   } catch {
     return false;
   }
+}
+
+async function uploadPendingImages<T extends Omit<AdminProperty, 'id'> | AdminProperty>(property: T): Promise<T> {
+  const upload = async (image: string) => {
+    if (!image.startsWith('data:')) return image;
+    const response = await fetch('/api/property-images', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ dataUrl: image }),
+    });
+    if (!response.ok) throw await getRequestError(response, 'Failed to upload property photo');
+    const result = (await response.json()) as { imageUrl: string };
+    return result.imageUrl;
+  };
+
+  const images = await Promise.all(property.images.map(upload));
+  const image = property.image.startsWith('data:')
+    ? property.images[0] === property.image ? images[0] ?? '' : await upload(property.image)
+    : property.image;
+  return {
+    ...property,
+    images,
+    image: property.images[0] === property.image ? images[0] ?? '' : image,
+  };
+}
+
+async function getRequestError(response: Response, fallback: string): Promise<Error> {
+  if (response.status === 413) {
+    return new Error('The upload is too large. Try a smaller photo or fewer photos.');
+  }
+  try {
+    const body = (await response.json()) as { error?: string };
+    if (body.error) return new Error(body.error);
+  } catch {
+    // Use the status-based message when the server does not return JSON.
+  }
+  return new Error(`${fallback} (HTTP ${response.status})`);
 }

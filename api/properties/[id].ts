@@ -34,7 +34,7 @@ export default async function handler(req: VercelRequest, res: VercelResponse) {
         updated_at = now()
       WHERE id = ${id}
       RETURNING *
-    `) as Record<string, any>[];
+    `) as Record<string, unknown>[];
     if (!row) {
       res.status(404).json({ error: 'Not found' });
       return;
@@ -52,7 +52,7 @@ export default async function handler(req: VercelRequest, res: VercelResponse) {
   res.status(405).json({ error: 'Method not allowed' });
 }
 
-function toProperty(row: Record<string, any>) {
+function toProperty(row: Record<string, unknown>) {
   return {
     id: Number(row.id),
     title: row.title,

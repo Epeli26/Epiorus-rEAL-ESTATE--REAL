@@ -6,7 +6,7 @@ export default async function handler(req: VercelRequest, res: VercelResponse) {
   const sql = getSql();
 
   if (req.method === 'GET') {
-    const rows = (await sql`SELECT * FROM properties ORDER BY created_at DESC`) as Record<string, any>[];
+    const rows = (await sql`SELECT * FROM properties ORDER BY created_at DESC`) as Record<string, unknown>[];
     res.status(200).json(rows.map(toProperty));
     return;
   }
@@ -17,8 +17,8 @@ export default async function handler(req: VercelRequest, res: VercelResponse) {
   }
 
   if (req.method === 'POST') {
-    const body = (req.body ?? {}) as Record<string, unknown>;
     const id = Date.now();
+    const body = (req.body ?? {}) as Record<string, unknown>;
     const [row] = (await sql`
       INSERT INTO properties (id, title, location, price, type, beds, baths, sqm, image, images, featured, description)
       VALUES (
@@ -36,7 +36,7 @@ export default async function handler(req: VercelRequest, res: VercelResponse) {
         ${String(body.description ?? '')}
       )
       RETURNING *
-    `) as Record<string, any>[];
+    `) as Record<string, unknown>[];
     res.status(201).json(toProperty(row));
     return;
   }
@@ -44,7 +44,7 @@ export default async function handler(req: VercelRequest, res: VercelResponse) {
   res.status(405).json({ error: 'Method not allowed' });
 }
 
-function toProperty(row: Record<string, any>) {
+function toProperty(row: Record<string, unknown>) {
   return {
     id: Number(row.id),
     title: row.title,
