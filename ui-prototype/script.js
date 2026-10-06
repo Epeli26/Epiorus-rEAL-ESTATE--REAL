@@ -524,13 +524,28 @@ document.addEventListener('click', (event) => { if (activeFilterMenu && !event.t
 async function loadOriginalProperties() {
   if (!listingList || !pagination) return;
   try {
-    if (Array.isArray(window.PROTOTYPE_PROPERTIES)) {
-      sourceProperties = window.PROTOTYPE_PROPERTIES;
-    } else {
-      const source = await fetch('../src/App.tsx').then((response) => response.text());
-      const arrayMatch = source.match(/const\s+PROPERTIES\s*=\s*(\[[\s\S]*?\]);/);
-      if (!arrayMatch) throw new Error('Property array could not be read from App.tsx');
-      sourceProperties = Function(`return ${arrayMatch[1]}`)();
+    // Prefer the live, database-backed catalog (admin-managed listings) over the static prototype data.
+    try {
+      const liveResponse = await fetch('/api/properties');
+      if (liveResponse.ok) {
+        const liveProperties = await liveResponse.json();
+        if (Array.isArray(liveProperties) && liveProperties.length) {
+          sourceProperties = liveProperties;
+        }
+      }
+    } catch (apiError) {
+      console.error('Live properties could not be loaded from the API:', apiError);
+    }
+
+    if (!sourceProperties.length) {
+      if (Array.isArray(window.PROTOTYPE_PROPERTIES)) {
+        sourceProperties = window.PROTOTYPE_PROPERTIES;
+      } else {
+        const source = await fetch('../src/App.tsx').then((response) => response.text());
+        const arrayMatch = source.match(/const\s+PROPERTIES\s*=\s*(\[[\s\S]*?\]);/);
+        if (!arrayMatch) throw new Error('Property array could not be read from App.tsx');
+        sourceProperties = Function(`return ${arrayMatch[1]}`)();
+      }
     }
 
     try {
